@@ -1,3 +1,31 @@
 theme: jekyll-theme-hacker
 title: Shubham Derhgawen
-description: My interview expirences
+description: Robotics MSc | Ex-TCS | Software Developer | Python, C++, Cloud | UCR Graduate Student
+author: Shubham Derhgawen
+email: sderh001@ucr.edu
+github_username: Shubhamd13
+
+education:
+  - institution: University of California, Riverside
+    degree: Masters of Science in Robotics
+    gpa: "3.9/4"
+    dates: Sep 2024 – Present
+  - institution: University of Pune, India
+    degree: Bachelor of Engineering in Information Technology
+    gpa: "8.43/10"
+    dates: Aug 2016 – Mar 2020
+skills:
+  - C
+  - C++
+  - Python
+  - PHP
+  - MySQL
+  - JavaScript
+  - Selenium
+  - ReactJS
+  - CodeIgniter
+  - jQuery
+  - ExpressJS
+  - Azure Data Factory
+  - AWS
+  - Power BI
