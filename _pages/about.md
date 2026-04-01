@@ -1,12 +1,12 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: M.S. Robotics student at UC Riverside focused on embodied AI, robot learning, and autonomous systems.
 
 profile:
   align: right
-  image:
+  image: shubham-profile.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Riverside, California</p>
