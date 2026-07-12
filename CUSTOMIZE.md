@@ -74,7 +74,7 @@ Here we will give you some tips on how to customize the website. One important t
     - [Removing the news section](#removing-the-news-section)
     - [Removing the projects page](#removing-the-projects-page)
     - [Removing the publications page](#removing-the-publications-page)
-    - [Removing the repositories page](#removing-the-repositories-page)
+    - [Showcasing repositories as projects](#showcasing-repositories-as-projects)
     - [You can also remove pages through commenting out front-matter blocks](#you-can-also-remove-pages-through-commenting-out-front-matter-blocks)
   - [Adding Token for Lighthouse Badger](#adding-token-for-lighthouse-badger)
     - [Personal Access Token (fine-grained) Permissions for Lighthouse Badger:](#personal-access-token-fine-grained-permissions-for-lighthouse-badger)
@@ -379,33 +379,11 @@ This will add a download button on your CV page that links to the PDF. (The exac
 
 Delete or comment out the [`.github/workflows/render-cv.yml`](.github/workflows/render-cv.yml) workflow file.
 
-## Modifying the user and repository information
+## Modifying the showcased repositories
 
-The user and repository information is defined in [\_data/repositories.yml](_data/repositories.yml). You can add as many users and repositories as you want. Both informations are used in the `repositories` section.
+The repositories you want to highlight are defined in [_data/repositories.yml](_data/repositories.yml). Add entries to `featured_repos` to render them on the [Projects page](_pages/projects.md) as normal project cards.
 
-### Configuring external service URLs
-
-The repository page uses external services to display GitHub statistics and trophies. By default, these are:
-
-- `github-readme-stats.vercel.app` for user stats and repository cards
-- `github-profile-trophy.vercel.app` for GitHub profile trophies
-
-**Important:** These default services are hosted by third parties and may not be available 100% of the time. For better reliability, privacy, and customization, you can self-host these services and configure your website to use your own instances.
-
-To use your own instances of these services, configure the URLs in [\_config.yml](_config.yml):
-
-```yaml
-external_services:
-  github_readme_stats_url: https://github-readme-stats.vercel.app
-  github_profile_trophy_url: https://github-profile-trophy.vercel.app
-```
-
-To self-host these services, follow the deployment instructions in their respective repositories:
-
-- [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
-- [github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy)
-
-Once deployed, update the URLs above to point to your custom deployment.
+Each featured repo can include an `img` field for a local thumbnail and a `tags` list for topic chips such as `Motion Planning` or `ROS 2`.
 
 ## Creating new pages
 
@@ -1169,12 +1147,11 @@ You can also:
 - delete [\_plugins/inspirehep-citations.rb](_plugins/inspirehep-citations.rb)
 - remove the `jekyll-scholar` gem from the [Gemfile](Gemfile) and the `plugins` section in [\_config.yml](_config.yml)
 
-### Removing the repositories page
+### Showcasing repositories as projects
 
-To remove the repositories, you can:
+To highlight selected repositories on the Projects page, add entries to `featured_repos` in [_data/repositories.yml](_data/repositories.yml). Each item can include a local thumbnail via `img` and topic chips via `tags`.
 
-- delete the repositories page [\_pages/repositories.md](_pages/repositories.md)
-- delete [\_includes/repository/](_includes/repository/) directory
+The old repositories widget page has been removed from the site.
 
 ### You can also remove pages through commenting out front-matter blocks
 

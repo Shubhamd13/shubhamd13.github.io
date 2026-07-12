@@ -124,11 +124,11 @@ scholar_userid: YOUR_SCHOLAR_ID
 
 ### repositories.yml
 
-GitHub repository listing for the repositories page.
+GitHub repository showcase data.
 
-**Format:** List of repository information
+**Format:** Lists of users, repository IDs, and featured repo cards
 
-**Usage:** Used by repositories page to display GitHub projects
+**Usage:** Used by the Projects page to display featured repositories as project cards
 
 ### coauthors.yml
 

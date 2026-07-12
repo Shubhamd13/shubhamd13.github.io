@@ -246,12 +246,12 @@ npx prettier . --write
 - Available theme colors defined in `_sass/_variables.scss`
 - Enable/disable dark mode in `_config.yml` (`enable_darkmode`)
 
-### 11. GitHub Repositories Display
+### 11. GitHub Repository Showcase
 
-**Files:** `_data/repositories.yml`, `_pages/repositories.md`
+**Files:** `_data/repositories.yml`, `_pages/projects.md`, `_includes/projects_repo.liquid`
 
-- Add GitHub usernames and repository names
-- Displayed with stats and trophies on repositories page
+- Add featured repositories to `featured_repos`
+- Displayed as project-style cards on the Projects page
 
 ### 12. Enable/Disable Features
 

@@ -1,7 +1,18 @@
 github_users:
-  - Shubhamd13
+  - shubhamd13
 
 repo_description_lines_max: 2
 
 github_repos:
-  - Shubhamd13/shubhamd13.github.io
+  - shubhamd13/shubhamd13.github.io
+
+featured_repos:
+  - title: shubhamd13.github.io
+    description: Personal site and portfolio built with al-folio.
+    img: assets/img/shubham-profile.jpg
+    github: https://github.com/shubhamd13/shubhamd13.github.io
+    tags:
+      - Jekyll
+      - Web Development
+      - Portfolio
+    importance: 1
