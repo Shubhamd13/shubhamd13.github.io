@@ -1,30 +1,28 @@
 <div class="col">
-  <a href="{% if include.repo.github %}{{ include.repo.github }}{% elsif include.repo.url %}{{ include.repo.url | relative_url }}{% else %}#{% endif %}">
-    <div class="card h-100 hoverable">
-      {% if include.repo.img %}
-        {%
-          include figure.liquid
-          loading="eager"
-          path=include.repo.img
-          sizes = "250px"
-          alt="project thumbnail"
-          class="card-img-top"
-        %}
+  <div class="card hoverable">
+    {% if include.repo.img %}
+      {%
+        include figure.liquid
+        loading="eager"
+        path=include.repo.img
+        sizes = "250px"
+        alt="project thumbnail"
+        class="card-img-top"
+      %}
+    {% endif %}
+    <div class="card-body">
+      <h2 class="card-title">{{ include.repo.title | default: include.repo.name }}</h2>
+      {% if include.repo.github %}
+        <a class="btn btn-sm btn-outline-primary mb-3" href="{{ include.repo.github }}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       {% endif %}
-      <div class="card-body">
-        <h2 class="card-title">{{ include.repo.title | default: include.repo.name }}</h2>
-        <p class="card-text">{{ include.repo.description | default: "Featured GitHub repository" }}</p>
-        {% if include.repo.tags %}
-          <div class="repo-tags">
-            {% for tag in include.repo.tags %}
-              <span class="repo-tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-        {% if include.repo.github %}
-          <p class="card-text"><small>View on GitHub</small></p>
-        {% endif %}
-      </div>
+      <p class="card-text">{{ include.repo.description | default: "Featured GitHub repository" }}</p>
+      {% if include.repo.tags %}
+        <div class="repo-tags">
+          {% for tag in include.repo.tags %}
+            <span class="repo-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
-  </a>
+  </div>
 </div>

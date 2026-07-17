@@ -1,18 +1,43 @@
-github_users:
-  - shubhamd13
 
-repo_description_lines_max: 2
-
-github_repos:
-  - shubhamd13/shubhamd13.github.io
 
 featured_repos:
-  - title: shubhamd13.github.io
-    description: Personal site and portfolio built with al-folio.
-    img: assets/img/shubham-profile.jpg
-    github: https://github.com/shubhamd13/shubhamd13.github.io
+  - title: Sample-Efficient Reinforcement Learning with Expert Data Augmentation
+    description: This project studies how expert demonstrations can improve sample efficiency for reinforcement learning in OpenAI Gym environments, with a primary focus on LunarLander-v2.
+    img: assets/img/LunarLander.gif
+    github: https://github.com/Shubhamd13/Demonstration-Augmented-Proximal-Policy-Gradient
     tags:
-      - Jekyll
-      - Web Development
-      - Portfolio
+      - Python
+      - Optuna
+      - Tensorboard
+      - Pytorch
+      - Reinforcement Learning
+      - NumPy
+      - OpenAI Gym
     importance: 1
+
+  - title: Autonomous Warehouse Pick-and-Deliver Robot
+    description: A Gazebo-based warehouse robot simulation for autonomous pick, transport, and delivery tasks with navigation and path-planning workflows.
+    img: assets/img/gazebo.png
+    github: https://github.com/Shubhamd13/Autonomous-Warehouse-Pick-and-Deliver-Robot
+    tags:
+      - Robotics
+      - ROS
+      - Gazebo
+      - Path Planning
+      - Navigation
+      - Automation
+    importance: 2
+    
+  - title: Scene and Social Awareness in Trajectory Prediction for Autonomous Driving
+    description: Trajectory prediction project that combines scene context and social interactions to better model surrounding agents in autonomous driving scenarios.
+    img: assets/img/trajectory_scores_visualization.png
+    github: https://github.com/Shubhamd13/Social-Awareness-in-Trajectory-Prediction
+    tags:
+      - Python
+      - Trajectory Prediction
+      - Autonomous Driving
+      - Social Awareness
+      - Scene Understanding
+      - Deep Learning
+    importance: 3
+

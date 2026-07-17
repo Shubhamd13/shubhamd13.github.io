@@ -135,6 +135,22 @@
     }
   ],
   "awards": [],
+  "acknowledgments": [
+    {
+      "title": "Acknowledged Contribution: CooperScene",
+      "date": "2026",
+      "awarder": "Collaborative Intelligence Systems Lab, UC Riverside",
+      "url": "https://cisl.ucr.edu/CooperScene/",
+      "summary": "Acknowledged for hands-on data collection, including driving the car during collection sessions (non-author contribution)."
+    },
+    {
+      "title": "Acknowledged Contribution: Drive My Way",
+      "date": "2026",
+      "awarder": "Collaborative Intelligence Systems Lab, UC Riverside",
+      "url": "https://dmw-cvpr.github.io/",
+      "summary": "Acknowledged for integrating Logitech G-series steering and pedals and supporting driving data recording (non-author contribution)."
+    }
+  ],
   "certificates": [
     {
       "name": "Azure Data Scientist Associate",
@@ -156,10 +172,10 @@
   "publications": [
     {
       "name": "CrowdROS: A Crowd Simulation Platform for Social Robot Navigation",
-      "publisher": "IROS 2026",
+      "publisher": "Manuscript in preparation",
       "releaseDate": "2026-01-01",
       "url": "",
-      "summary": "Submitted to IROS 2026 and currently under review. Authors: Shubham Derhgawen*, Aadhar Chauhan*, Andreas Panayiotou, Fabien Grzeskowiak, Julien Pettre, and Ioannis Karamouzas. * denotes co-first authorship."
+      "summary": "Preparing for resubmission to a different venue. Previously submitted to IROS 2026. Authors: Shubham Derhgawen * , Aadhar Chauhan * , Andreas Panayiotou, Fabien Grzeskowiak, Julien Pettre, and Ioannis Karamouzas. * denotes co-first authorship."
     }
   ],
   "skills": [

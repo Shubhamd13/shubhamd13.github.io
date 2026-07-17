@@ -300,6 +300,18 @@ layout: default
           </div>
         {% endif %}
 
+        <!-- Acknowledgments -->
+        {% if site.data.resume.acknowledgments.size > 0 %}
+          <a class="anchor" id="acknowledgments"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Acknowledgments</h3>
+            <div>
+              {% assign entries = site.data.resume.acknowledgments %}
+              {% include cv/awards.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
         <!-- Publications -->
         {% if site.data.resume.publications.size > 0 %}
           <a class="anchor" id="publications"></a>
