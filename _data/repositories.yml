@@ -1,6 +1,20 @@
 
 
 featured_repos:
+  - title: 12-DOF Quadruped Robot
+    description: A 12-DOF quadruped robot built for rough-terrain experimentation, with servo-driven gait control, WiFi-based remote operation, and live camera streaming.
+    img: assets/img/Assembly.png
+    github: https://github.com/Shubhamd13/12-DOF-Quadruped-Robot
+    tags:
+      - SolidWorks
+      - Python
+      - Tkinter 
+      - Arduino
+      - C++
+      - Tripod Gait
+      - 3D Printing
+    importance: 1
+
   - title: Sample-Efficient Reinforcement Learning with Expert Data Augmentation
     description: This project studies how expert demonstrations can improve sample efficiency for reinforcement learning in OpenAI Gym environments, with a primary focus on LunarLander-v2.
     img: assets/img/LunarLander.gif
