@@ -8,6 +8,10 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  // Subtle dot grid: grey dots on white in light mode, faint white dots in dark mode
+  background-image: radial-gradient(var(--global-dot-color) 1px, transparent 1.2px);
+  background-size: 22px 22px;
+  background-attachment: fixed;
 
   h1,
   h2,

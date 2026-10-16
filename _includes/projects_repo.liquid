@@ -12,6 +12,9 @@
     {% endif %}
     <div class="card-body">
       <h2 class="card-title">{{ include.repo.title | default: include.repo.name }}</h2>
+      {% if include.repo.page %}
+        <a class="btn btn-sm btn-primary mb-3" href="{{ include.repo.page | relative_url }}">Project page</a>
+      {% endif %}
       {% if include.repo.github %}
         <a class="btn btn-sm btn-outline-primary mb-3" href="{{ include.repo.github }}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       {% endif %}
@@ -24,5 +27,15 @@
         </div>
       {% endif %}
     </div>
+    {% if include.repo.where or include.repo.when %}
+      <div class="repo-stub">
+        <span class="repo-stamp">
+          <i class="fa-solid fa-graduation-cap"></i>
+          {{ include.repo.where }}
+          {%- if include.repo.where and include.repo.when %} · {% endif -%}
+          {{ include.repo.when }}
+        </span>
+      </div>
+    {% endif %}
   </div>
 </div>

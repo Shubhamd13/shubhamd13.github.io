@@ -5,13 +5,17 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
   {% for entry in entries %}
     <li class="list-group-item">
-      {% if entry.url %}
-        <h6 class="title font-weight-bold">
-          <a href="{{ entry.url }}" target="_blank">{{ entry.name }}</a>
-        </h6>
-      {% else %}
-        <h6 class="title font-weight-bold">{{ entry.name }}</h6>
-      {% endif %}
+      {% capture project_date %}{% if entry.startDate %}{{ entry.startDate | date: "%b %Y" }}{% elsif entry.date %}{{ entry.date }}{% endif %}{% endcapture %}
+      <h6 class="title font-weight-bold">
+        {% if entry.url %}
+          <a href="{{ entry.url | relative_url }}">{{ entry.name }}</a>
+        {% else %}
+          {{ entry.name }}
+        {% endif %}
+        {% if project_date != '' %}
+          <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle ml-2">{{ project_date }}</span>
+        {% endif %}
+      </h6>
 
       {% if entry.summary %}
         <p>{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
