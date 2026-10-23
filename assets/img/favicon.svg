@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Shubham Derhgawen</title>
+  <rect width="64" height="64" rx="14" fill="#b509ac"/>
+  <g fill="#ffffff">
+    <rect x="27" y="43" width="10" height="15" rx="1.5"/>
+    <rect x="13" y="33" width="38" height="11" rx="2.5"/>
+    <path d="M15 34 L10 18 L17.5 7 L25.5 9.5 L20 19 L24.5 34 Z"/>
+    <path d="M49 34 L54 18 L46.5 7 L38.5 9.5 L44 19 L39.5 34 Z"/>
+  </g>
+  <circle cx="32" cy="38.5" r="2.6" fill="#b509ac"/>
+</svg>

@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "Selected robotics and machine learning projects.",
+          description: "Robotics and machine learning research, software I built from my own ideas, and coursework.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -64,6 +64,11 @@ ninja.data = [{
           description: "Using expert demonstrations to cut the number of environment steps PPO needs on LunarLander-v2.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/dapg/";
+            },},{id: "projects-food-diary",
+          title: 'Food Diary',
+          description: "A personal health log I built to find my IBS triggers, by keeping meals, bowel movements, mood, and medication on one timeline.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/food-diary/";
             },},{id: "projects-prints-on-the-go",
           title: 'Prints On The Go',
           description: "Upload a document from your phone, and the photocopy shop&#39;s printer prints it with nobody at the counter.",
