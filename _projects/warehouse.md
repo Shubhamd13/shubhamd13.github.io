@@ -5,6 +5,8 @@ description: A TurtleBot 3 with a manipulator arm that maps a warehouse, plans a
 img: assets/img/gazebo.png
 importance: 1
 category: work
+keywords: mobile manipulation, warehouse robot, TurtleBot3, OpenMANIPULATOR-X, ROS, Gazebo, SLAM, GMapping, RRT*, path planning, occupancy grid, UC Riverside
+og_image: https://shubhamd13.github.io/assets/img/gazebo.png
 ---
 
 <div class="row justify-content-center">
@@ -62,3 +64,10 @@ Next steps:
 - Add camera-based object detection and integrate the arm
 - Replace the offline map with live SLAM so the robot can handle changes in the layout
 - Deploy on a physical TurtleBot
+
+## References
+
+1. G. Grisetti, C. Stachniss, and W. Burgard. [Improved Techniques for Grid Mapping with Rao-Blackwellized Particle Filters](https://doi.org/10.1109/TRO.2006.889486). IEEE Transactions on Robotics, 2007. ([GMapping](https://openslam-org.github.io/gmapping.html))
+2. S. Karaman and E. Frazzoli. [Sampling-based Algorithms for Optimal Motion Planning](https://arxiv.org/abs/1105.1186). International Journal of Robotics Research, 2011.
+3. [TurtleBot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/) and [OpenMANIPULATOR-X](https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/) e-Manuals, ROBOTIS.
+4. [gmapping ROS package](https://wiki.ros.org/gmapping).

@@ -1,58 +1,22 @@
-
-
+# Robotics and machine learning research (Projects page, first section)
 featured_repos:
   - title: 12-DOF Quadruped Robot
-    description: A 12-DOF quadruped robot built for rough-terrain experimentation, with servo-driven gait control, WiFi-based remote operation, and live camera streaming.
+    description: A 3D-printed, 12-DOF legged robot built in a team of three, with Arduino firmware, a Python control GUI, and live camera streaming.
     img: assets/img/Assembly.png
     page: /projects/quadruped/
     where: UC Riverside
     when: "2025"
     github: https://github.com/Shubhamd13/12-DOF-Quadruped-Robot
     tags:
+      - Arduino C++
+      - Python
       - SolidWorks
-      - Python
-      - Tkinter 
-      - Arduino
-      - C++
-      - Tripod Gait
       - 3D Printing
-    importance: 1
+      - ESP32-CAM
+      - Legged Robots
 
-  - title: Sample-Efficient Reinforcement Learning with Expert Data Augmentation
-    description: This project studies how expert demonstrations can improve sample efficiency for reinforcement learning in OpenAI Gym environments, with a primary focus on LunarLander-v2.
-    img: assets/img/LunarLander.gif
-    page: /projects/dapg/
-    where: UC Riverside
-    when: "2024"
-    github: https://github.com/Shubhamd13/Demonstration-Augmented-Proximal-Policy-Gradient
-    tags:
-      - Python
-      - Optuna
-      - Tensorboard
-      - Pytorch
-      - Reinforcement Learning
-      - NumPy
-      - OpenAI Gym
-    importance: 1
-
-  - title: Autonomous Warehouse Pick-and-Deliver Robot
-    description: A Gazebo-based warehouse robot simulation for autonomous pick, transport, and delivery tasks with navigation and path-planning workflows.
-    img: assets/img/gazebo.png
-    page: /projects/warehouse/
-    where: UC Riverside
-    when: "2025"
-    github: https://github.com/Shubhamd13/Autonomous-Warehouse-Pick-and-Deliver-Robot
-    tags:
-      - Robotics
-      - ROS
-      - Gazebo
-      - Path Planning
-      - Navigation
-      - Automation
-    importance: 2
-    
-  - title: Scene and Social Awareness in Trajectory Prediction for Autonomous Driving
-    description: Trajectory prediction project that combines scene context and social interactions to better model surrounding agents in autonomous driving scenarios.
+  - title: Scene and Social Awareness in Trajectory Prediction
+    description: Re-ranks a predictor's candidate futures with Direct Preference Optimization, cutting obstacle violations by 47% in highway-env.
     img: assets/img/trajectory_scores_visualization.png
     page: /projects/trajectory-prediction/
     where: UC Riverside
@@ -60,16 +24,66 @@ featured_repos:
     github: https://github.com/Shubhamd13/Social-Awareness-in-Trajectory-Prediction
     tags:
       - Python
+      - PyTorch
+      - DPO
       - Trajectory Prediction
       - Autonomous Driving
-      - Social Awareness
-      - Scene Understanding
-      - Deep Learning
-    importance: 3
+      - highway-env
+
+  - title: Autonomous Warehouse Pick-and-Deliver Robot
+    description: A TurtleBot3 mobile manipulator in Gazebo that maps a warehouse with GMapping and plans collision-free routes with RRT*.
+    img: assets/img/gazebo.png
+    page: /projects/warehouse/
+    where: UC Riverside
+    when: "2025"
+    github: https://github.com/Shubhamd13/Autonomous-Warehouse-Pick-and-Deliver-Robot
+    tags:
+      - ROS
+      - Gazebo
+      - SLAM
+      - RRT*
+      - Path Planning
+      - TurtleBot3
+
+  - title: Sample-Efficient RL with Expert Data Augmentation
+    description: PPO, behavior cloning, and a demonstration-augmented loss built from scratch in PyTorch to cut the environment steps PPO needs.
+    img: assets/img/LunarLander.gif
+    page: /projects/dapg/
+    where: UC Riverside
+    when: "2024"
+    github: https://github.com/Shubhamd13/Demonstration-Augmented-Proximal-Policy-Gradient
+    tags:
+      - Python
+      - PyTorch
+      - PPO
+      - Imitation Learning
+      - Optuna
+      - LunarLander
+
+# Software and side projects (second section)
+side_repos:
+  - title: Food Diary
+    description: A personal health log I built to track my IBS triggers. Log meals, bowel movements, mood, and medication on a calendar, with each user's data private to them.
+    img: assets/img/projects/food-diary/login.png
+    img_fit: contain
+    page: /projects/food-diary/
+    live: https://food-diary-9ddf1.web.app/
+    where: Side project
+    when: "2023"
+    stamp_icon: fa-solid fa-utensils
+    github: https://github.com/Shubhamd13/Food-Diary
+    tags:
+      - React
+      - Firebase Auth
+      - Cloud Firestore
+      - Firebase Hosting
+      - webpack
+      - Bootstrap
 
   - title: Prints On The Go
     description: "Our own idea: print at the photocopy shop straight from your phone, with no one at the counter, by driving the Windows print spooler directly."
     img: assets/img/potg-logo.png
+    img_fit: contain
     page: /projects/potg/
     where: SPPU
     when: "2018"
@@ -82,6 +96,7 @@ featured_repos:
       - Win32 Print Spooler API
       - libcurl
 
+# Coursework (third section)
 coursework_repos:
   - title: Natural Language Processing
     description: "Graduate NLP notebooks: Word2Vec with hand-written backprop, a from-scratch Transformer for translation, and exercises on RLHF, LoRA, pruning, CLIP, and adversarial prompts."
@@ -122,19 +137,6 @@ coursework_repos:
       - Rasterization
       - Fractals
 
-  - title: Operating Systems Lab
-    description: "Linux programming in C and Bash: fork/exec, pthreads, producer-consumer, reader-writer, dining philosophers, and IPC with pipes, FIFOs, and shared memory."
-    where: SPPU
-    when: "2018"
-    github: https://github.com/Shubhamd13/osprac
-    tags:
-      - C
-      - Bash
-      - Linux
-      - POSIX Threads
-      - Semaphores
-      - IPC
-
   - title: Systems Programming Lab
     description: A two-pass assembler, a lexical analyzer, a recursive descent parser, and Lex/Yacc tools that generate three-address code, in C and C++.
     where: SPPU
@@ -159,3 +161,16 @@ coursework_repos:
       - MapReduce
       - HDFS
       - Big Data
+
+  - title: Operating Systems Lab
+    description: "Linux programming in C and Bash: fork/exec, pthreads, producer-consumer, reader-writer, dining philosophers, and IPC with pipes, FIFOs, and shared memory."
+    where: SPPU
+    when: "2018"
+    github: https://github.com/Shubhamd13/osprac
+    tags:
+      - C
+      - Bash
+      - Linux
+      - POSIX Threads
+      - Semaphores
+      - IPC

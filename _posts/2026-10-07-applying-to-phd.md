@@ -35,4 +35,5 @@ Applying to PhD programs is a long process with many moving parts: finding advis
 <!-- Your own take -->
 
 ## Links
+
 https://www.cs.cmu.edu/~harchol/gradschooltalk.pdf

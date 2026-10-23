@@ -12,11 +12,13 @@ This page lists research papers where I contributed to project execution (for ex
 ## Acknowledged Research Contributions (Non-Author)
 
 ### Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving
+
 - Venue: CVPR 2026 Workshop
 - Project page: [https://dmw-cvpr.github.io/](https://dmw-cvpr.github.io/)
 - Contribution context: Acknowledged for integrating Logitech G-series steering wheel and pedals into the setup and supporting driving data recording.
 
 ### CooperScene: Multi-Modal Cooperative Autonomy Benchmark with C-V2X Communication Characterization
+
 - Venue: ECCV 2026
 - Project page: [https://cisl.ucr.edu/CooperScene/](https://cisl.ucr.edu/CooperScene/)
 - Contribution context: Acknowledged for hands-on data collection, including driving the vehicle during collection sessions.

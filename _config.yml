@@ -15,10 +15,12 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: robotics, embodied ai, machine learning, motion planning, reinforcement learning, autonomous systems # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.svg # the favicon: an emoji, or an image name in /assets/img/ (robot gripper, matches the cursor)
+icon_png: favicon-32x32.png # PNG fallback for browsers without SVG favicon support
+apple_touch_icon: apple-touch-icon.png # 180x180 icon used when added to an iPhone home screen
 
 url: https://shubhamd13.github.io # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -52,7 +54,7 @@ max_width: 930px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
 
@@ -175,7 +177,6 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -356,7 +357,7 @@ imagemagick:
     - ".tiff"
     - ".gif"
   output_formats:
-    webp: "-auto-orient -quality 85"
+    webp: "-coalesce -auto-orient -quality 85" # -coalesce expands partial GIF frames so animated WebP conversion works
 
 # Lazy loading images
 #   If you enable lazy loading, all images will add the loading="lazy" attribute.
@@ -436,7 +437,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Cinzel:600,700|UnifrakturCook:700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Cinzel:600,700|Grenze+Gotisch:700|Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

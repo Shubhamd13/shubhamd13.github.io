@@ -1,24 +1,20 @@
 <div class="col">
-  <div class="card hoverable">
+  <div class="card hoverable project-card">
     {% if include.repo.img %}
-      {%
-        include figure.liquid
-        loading="eager"
-        path=include.repo.img
-        sizes = "250px"
-        alt="project thumbnail"
-        class="card-img-top"
-      %}
+      <div class="project-card__thumb{% if include.repo.img_fit == 'contain' %} project-card__thumb--contain{% endif %}">
+        {%
+          include figure.liquid
+          loading="eager"
+          path=include.repo.img
+          sizes = "400px"
+          alt="project thumbnail"
+          class="card-img-top"
+        %}
+      </div>
     {% endif %}
     <div class="card-body">
-      <h2 class="card-title">{{ include.repo.title | default: include.repo.name }}</h2>
-      {% if include.repo.page %}
-        <a class="btn btn-sm btn-primary mb-3" href="{{ include.repo.page | relative_url }}">Project page</a>
-      {% endif %}
-      {% if include.repo.github %}
-        <a class="btn btn-sm btn-outline-primary mb-3" href="{{ include.repo.github }}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-      {% endif %}
-      <p class="card-text">{{ include.repo.description | default: "Featured GitHub repository" }}</p>
+      <h3 class="card-title">{{ include.repo.title | default: include.repo.name }}</h3>
+      <p class="card-text">{{ include.repo.description | default: 'Featured GitHub repository' }}</p>
       {% if include.repo.tags %}
         <div class="repo-tags">
           {% for tag in include.repo.tags %}
@@ -27,15 +23,26 @@
         </div>
       {% endif %}
     </div>
-    {% if include.repo.where or include.repo.when %}
-      <div class="repo-stub">
+    <div class="project-card__footer">
+      <div class="project-card__actions">
+        {% if include.repo.page %}
+          <a class="btn btn-sm btn-primary" href="{{ include.repo.page | relative_url }}">Project page</a>
+        {% endif %}
+        {% if include.repo.live %}
+          <a class="btn btn-sm btn-outline-primary" href="{{ include.repo.live }}" target="_blank" rel="noopener noreferrer">Live app</a>
+        {% endif %}
+        {% if include.repo.github %}
+          <a class="btn btn-sm btn-outline-primary" href="{{ include.repo.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        {% endif %}
+      </div>
+      {% if include.repo.where or include.repo.when %}
         <span class="repo-stamp">
-          <i class="fa-solid fa-graduation-cap"></i>
+          <i class="{{ include.repo.stamp_icon | default: 'fa-solid fa-graduation-cap' }}"></i>
           {{ include.repo.where }}
           {%- if include.repo.where and include.repo.when %} · {% endif -%}
           {{ include.repo.when }}
         </span>
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
 </div>

@@ -5,6 +5,8 @@ description: Using expert demonstrations to cut the number of environment steps 
 img: assets/img/LunarLander.gif
 importance: 1
 category: work
+keywords: reinforcement learning, imitation learning, demonstration-augmented policy gradient, DAPG, PPO, behavior cloning, sample efficiency, LunarLander, PyTorch, Optuna, UC Riverside
+og_image: https://shubhamd13.github.io/assets/img/LunarLander.gif
 ---
 
 <div class="row justify-content-center">
@@ -58,6 +60,8 @@ A large weight makes this behave like behavior cloning, and a weight of zero giv
 
 ## Results
 
+<!-- prettier-ignore-start -->
+
 | Environment    | Method | Mean eval. reward | Environment steps | Std. dev. |
 | -------------- | ------ | ----------------: | ----------------: | --------: |
 | CartPole-v1    | PPO    |               500 |            95,000 |         0 |
@@ -66,6 +70,8 @@ A large weight makes this behave like behavior cloning, and a weight of zero giv
 | LunarLander-v2 | BC     |               250 |    80,000 (demos) |        47 |
 | LunarLander-v2 | DAPG   |               257 |             1,024 |        39 |
 {: .table .table-bordered .table-sm}
+
+<!-- prettier-ignore-end -->
 
 After BC pretraining, the demonstration-augmented agent reached 257 ± 39 using only 1,024 of its own environment steps, compared with about 1M for PPO trained from scratch. Most of that sample efficiency comes from the demonstrations, which a real robot would need to collect too.
 
@@ -80,3 +86,13 @@ After BC pretraining, the demonstration-augmented agent reached 257 ± 39 using 
 - Try other ways of mixing demonstrations into the objective, including ones that hold up with noisy or limited demonstrations
 - Combine model-free and model-based learning, in the spirit of guided policy search ([Levine & Koltun, 2013](https://proceedings.mlr.press/v28/levine13.html))
 - Extend demonstration-augmented learning to multi-agent settings
+
+## References
+
+1. A. Rajeswaran, V. Kumar, A. Gupta, G. Vezzani, J. Schulman, E. Todorov, and S. Levine. [Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations](https://arxiv.org/abs/1709.10087). RSS 2018.
+2. J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov. [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347). 2017.
+3. J. Schulman, P. Moritz, S. Levine, M. Jordan, and P. Abbeel. [High-Dimensional Continuous Control Using Generalized Advantage Estimation](https://arxiv.org/abs/1506.02438). ICLR 2016.
+4. S. Levine and V. Koltun. [Guided Policy Search](https://proceedings.mlr.press/v28/levine13.html). ICML 2013.
+5. A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, and N. Dormann. [Stable-Baselines3: Reliable Reinforcement Learning Implementations](https://jmlr.org/papers/v22/20-1364.html). JMLR 2021.
+6. T. Akiba, S. Sano, T. Yanase, T. Ohta, and M. Koyama. [Optuna: A Next-generation Hyperparameter Optimization Framework](https://arxiv.org/abs/1907.10902). KDD 2019.
+7. [LunarLander environment documentation](https://gymnasium.farama.org/environments/box2d/lunar_lander/), Gymnasium.

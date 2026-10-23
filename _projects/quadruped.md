@@ -5,6 +5,8 @@ description: A four-legged walking robot we designed in SolidWorks, 3D-printed, 
 img: assets/img/Assembly.png
 importance: 1
 category: work
+keywords: quadruped robot, 12-DOF legged robot, legged locomotion, robot gait, Arduino UNO R4 WiFi, PCA9685 servo driver, ESP32-CAM, SolidWorks, 3D printing, robotics hardware, UC Riverside
+og_image: https://shubhamd13.github.io/assets/img/Assembly.png
 ---
 
 <div class="row justify-content-center">
@@ -72,3 +74,8 @@ The current controller is open-loop: it plays back joint angles with no feedback
 - IMU feedback so the gait can adapt to keep the body stable
 - Ultrasonic obstacle detection, and object or person detection on the camera feed
 - Autonomous navigation (A\* / SLAM) and smoother, more power-efficient gait transitions
+
+## References
+
+1. [Adafruit PWM Servo Driver library](https://github.com/Adafruit/Adafruit-PWM-Servo-Driver-Library), the Arduino driver for the PCA9685 board.
+2. [Arduino UNO R4 WiFi documentation](https://docs.arduino.cc/hardware/uno-r4-wifi/).

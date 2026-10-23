@@ -5,6 +5,8 @@ description: Re-ranking a predictor's candidate futures with Direct Preference O
 img: assets/img/trajectory_scores_visualization.png
 importance: 1
 category: work
+keywords: trajectory prediction, autonomous driving, Direct Preference Optimization, DPO, preference learning, social navigation, highway-env, SocialVAE, motion forecasting, UC Riverside
+og_image: https://shubhamd13.github.io/assets/img/trajectory_scores_visualization.png
 ---
 
 <div class="row justify-content-center">
@@ -52,13 +54,17 @@ We extended [highway-env](https://github.com/Farama-Foundation/HighwayEnv) with 
 
 We trained the preference layer for 50 episodes in the intersection scenario, then compared trajectory quality before and after DPO training (`compare_policies.py`):
 
-| Metric                  | Before DPO | After DPO |        Change |
-| ----------------------- | ---------: | --------: | ------------: |
-| Avg. best score         |     −0.452 |     0.158 |        +0.610 |
-| Avg. worst score        |     −1.005 |    −0.347 |        +0.658 |
-| Avg. lane violations    |      0.028 |     0.015 | −46% |
+<!-- prettier-ignore-start -->
+
+| Metric                   | Before DPO | After DPO |   Change |
+| ------------------------ | ---------: | --------: | -------: |
+| Avg. best score          |     −0.452 |     0.158 |   +0.610 |
+| Avg. worst score         |     −1.005 |    −0.347 |   +0.658 |
+| Avg. lane violations     |      0.028 |     0.015 |     −46% |
 | Avg. obstacle violations |      1.550 |     0.817 | **−47%** |
 {: .table .table-bordered .table-sm}
+
+<!-- prettier-ignore-end -->
 
 Obstacle violations dropped by 47% and lane violations by 46%, and both the best and worst candidates scored higher after training.
 
@@ -86,3 +92,13 @@ In both robot–human scenarios, the preference layer consistently favored safer
 - The small-scale pedestrian scenes do not capture vehicle dynamics or high-speed interactions.
 
 Next steps are to finish the highway-env integration and measure collision rate, off-road violations, and planner performance against the unadjusted predictor; to learn the metrics instead of hand-writing them; and to test whether the preference layer transfers across different base predictors.
+
+## References
+
+1. R. Rafailov, A. Sharma, E. Mitchell, S. Ermon, C. D. Manning, and C. Finn. [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/abs/2305.18290). NeurIPS 2023.
+2. P. Xu, J.-B. Hayet, and I. Karamouzas. [SocialVAE: Human Trajectory Prediction using Timewise Latents](https://arxiv.org/abs/2203.08207). ECCV 2022.
+3. D. Helbing and P. Molnár. [Social Force Model for Pedestrian Dynamics](https://arxiv.org/abs/cond-mat/9805244). Physical Review E, 1995.
+4. A. Alahi, K. Goel, V. Ramanathan, A. Robicquet, L. Fei-Fei, and S. Savarese. [Social LSTM: Human Trajectory Prediction in Crowded Spaces](https://openaccess.thecvf.com/content_cvpr_2016/html/Alahi_Social_LSTM_Human_CVPR_2016_paper.html). CVPR 2016.
+5. T. Salzmann, B. Ivanovic, P. Chakravarty, and M. Pavone. [Trajectron++: Dynamically-Feasible Trajectory Forecasting with Heterogeneous Data](https://arxiv.org/abs/2001.03093). ECCV 2020.
+6. Y. Chai, B. Sapp, M. Bansal, and D. Anguelov. [MultiPath: Multiple Probabilistic Anchor Trajectory Hypotheses for Behavior Prediction](https://arxiv.org/abs/1910.05449). CoRL 2019.
+7. E. Leurent. [highway-env: An Environment for Autonomous Driving Decision-Making](https://github.com/Farama-Foundation/HighwayEnv). 2018.

@@ -116,9 +116,7 @@
         "Advanced Computer Vision",
         "Natural Language Processing"
       ],
-      "highlights": [
-        "Focus area: Embodied AI and Machine Learning."
-      ]
+      "highlights": ["Focus area: Embodied AI and Machine Learning."]
     },
     {
       "institution": "University of Pune",
@@ -128,14 +126,8 @@
       "startDate": "2016-08-01",
       "endDate": "2020-03-01",
       "score": "8.43/10",
-      "courses": [
-        "Fundamentals of Data Structures and Algorithms",
-        "Database Management Systems",
-        "Operating Systems"
-      ],
-      "highlights": [
-        "First Class with Distinction."
-      ]
+      "courses": ["Fundamentals of Data Structures and Algorithms", "Database Management Systems", "Operating Systems"],
+      "highlights": ["First Class with Distinction."]
     }
   ],
   "awards": [],
@@ -185,60 +177,19 @@
   "skills": [
     {
       "name": "Programming Languages",
-      "keywords": [
-        "C++",
-        "Python",
-        "C",
-        "C#",
-        "JavaScript",
-        "SQL",
-        "Bash"
-      ]
+      "keywords": ["C++", "Python", "C", "C#", "JavaScript", "SQL", "Bash"]
     },
     {
       "name": "Autonomy",
-      "keywords": [
-        "State machines",
-        "Nav2",
-        "MoveIt",
-        "RRT*",
-        "A*",
-        "SLAM (slam_toolbox, GMapping)",
-        "Kalman filter",
-        "PID",
-        "LQR",
-        "FK/IK"
-      ]
+      "keywords": ["State machines", "Nav2", "MoveIt", "RRT*", "A*", "SLAM (slam_toolbox, GMapping)", "Kalman filter", "PID", "LQR", "FK/IK"]
     },
     {
       "name": "Robotics Software",
-      "keywords": [
-        "ROS 2 Jazzy",
-        "ROS",
-        "TF2",
-        "URDF",
-        "QoS",
-        "rosbag2/MCAP",
-        "RViz",
-        "Foxglove",
-        "Docker",
-        "Git",
-        "Linux",
-        "pytest",
-        "CI/CD"
-      ]
+      "keywords": ["ROS 2 Jazzy", "ROS", "TF2", "URDF", "QoS", "rosbag2/MCAP", "RViz", "Foxglove", "Docker", "Git", "Linux", "pytest", "CI/CD"]
     },
     {
       "name": "Simulation",
-      "keywords": [
-        "Gazebo",
-        "Unity",
-        "CARLA",
-        "PyBullet",
-        "highway-env",
-        "Isaac Lab (introductory)",
-        "scenario and regression runs"
-      ]
+      "keywords": ["Gazebo", "Unity", "CARLA", "PyBullet", "highway-env", "Isaac Lab (introductory)", "scenario and regression runs"]
     },
     {
       "name": "Learning and Vision",
@@ -274,14 +225,7 @@
     },
     {
       "name": "Cloud and Web",
-      "keywords": [
-        "Azure (Data Factory, Data Lake, Batch, DevOps)",
-        "AWS (EC2, RDS, S3)",
-        "Node.js",
-        "Firebase",
-        "Power BI",
-        "Selenium"
-      ]
+      "keywords": ["Azure (Data Factory, Data Lake, Batch, DevOps)", "AWS (EC2, RDS, S3)", "Node.js", "Firebase", "Power BI", "Selenium"]
     }
   ],
   "languages": [],
@@ -365,9 +309,7 @@
       "name": "Hopper Legged Locomotion",
       "startDate": "2024-12-01",
       "summary": "Reinforcement Learning, UC Riverside.",
-      "highlights": [
-        "Implemented VPG and PPO from scratch (clipping, GAE) to train one-legged hopping in PyBullet."
-      ]
+      "highlights": ["Implemented VPG and PPO from scratch (clipping, GAE) to train one-legged hopping in PyBullet."]
     }
   ]
 }

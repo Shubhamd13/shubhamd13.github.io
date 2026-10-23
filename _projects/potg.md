@@ -7,6 +7,8 @@ importance: 1
 category: work
 mermaid:
   enabled: true
+keywords: Prints On The Go, Win32 print spooler API, WritePrinter, unattended printing, PHP, MySQL, libcurl, C++, DBMS project, Savitribai Phule Pune University
+og_image: https://shubhamd13.github.io/assets/img/potg-logo.png
 ---
 
 <div class="row justify-content-center">
@@ -88,3 +90,8 @@ The `RAW` datatype tells the spooler not to render anything, so the bytes go to 
 
 - **Text only.** The polling client passes a document's contents to the print program as command-line arguments, so the prototype handled plain-text files. Printing PDFs or images would mean rendering pages through a GDI device context, or handing files to an application that can render them.
 - **Polling instead of push.** Asking the server every few seconds was simple and needed no open port on the shop PC. But the server marks a job as printed the moment it hands out the name, so a failed download loses that job. A proper job queue with acknowledgements would fix that.
+
+## References
+
+1. [Print Spooler API](https://learn.microsoft.com/en-us/windows/win32/printdocs/print-spooler-api), Microsoft Learn: [OpenPrinter](https://learn.microsoft.com/en-us/windows/win32/printdocs/openprinter), [StartDocPrinter](https://learn.microsoft.com/en-us/windows/win32/printdocs/startdocprinter), and [WritePrinter](https://learn.microsoft.com/en-us/windows/win32/printdocs/writeprinter).
+2. [libcurl easy interface](https://curl.se/libcurl/c/libcurl-easy.html), used by the polling client.

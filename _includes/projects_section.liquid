@@ -1,0 +1,15 @@
+{% comment %}
+  One section of the Projects page.
+  Params: repos (list from _data/repositories.yml), id (anchor), title, subtitle, cols (cards per row on wide screens, default 3)
+{% endcomment %}
+{% if include.repos %}
+  <a id="{{ include.id }}" href=".#{{ include.id }}" class="projects-section-link">
+    <h2 class="projects-section">{{ include.title }}</h2>
+  </a>
+  <p class="projects-section__subtitle">{{ include.subtitle }}</p>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.cols | default: 3 }} projects-grid">
+    {% for repo in include.repos %}
+      {% include projects_repo.liquid repo=repo %}
+    {% endfor %}
+  </div>
+{% endif %}
