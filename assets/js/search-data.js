@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications",
           title: "Publications",
           description: "",
           section: "Navigation",
@@ -37,26 +44,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-social-robot-navigation",
+        },{id: "post-simulators-for-social-robot-navigation-a-practical-guide-to-installing-arena-and-sean",
         
-          title: "Social Robot Navigation",
+          title: "Simulators for Social Robot Navigation: A Practical Guide to Installing Arena and SEAN...",
         
-        description: "Notes on how robots should move among people",
+        description: "How to pick a version of Arena or SEAN, which simulators each one really supports, and how to get past the install problems people run into",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2026/social-robot-navigation/";
-          
-        },
-      },{id: "post-applying-to-phd-programs",
-        
-          title: "Applying to PhD Programs",
-        
-        description: "Notes on the PhD application process",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/applying-to-phd/";
           
         },
       },{id: "projects-sample-efficient-rl-with-expert-data-augmentation",
