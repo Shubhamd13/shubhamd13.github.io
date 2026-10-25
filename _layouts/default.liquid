@@ -16,30 +16,37 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %} {% if page.layout == 'post' %}paper-page{% endif %}">
     <!-- Header -->
     {% include header.liquid %}
 
     <!-- Content -->
     <div class="container mt-5" role="main">
       {% if page.toc and page.toc.sidebar %}
+        {% if page.layout == 'post' %}
+          {% assign toc_col = 'col-lg-3' %}
+          {% assign content_col = 'col-lg-9' %}
+        {% else %}
+          {% assign toc_col = 'col-sm-3' %}
+          {% assign content_col = 'col-sm-9' %}
+        {% endif %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
             <!-- main content area -->
-            <div class="col-sm-9">{{ content }}</div>
+            <div class="{{ content_col }}">{{ content }}</div>
             <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-3">
+            <div class="{{ toc_col }}">
               <nav id="toc-sidebar" class="sticky-top"></nav>
             </div>
           </div>
         {% else %}
           <div class="row">
             <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-3">
+            <div class="{{ toc_col }}">
               <nav id="toc-sidebar" class="sticky-top"></nav>
             </div>
             <!-- main content area -->
-            <div class="col-sm-9">{{ content }}</div>
+            <div class="{{ content_col }}">{{ content }}</div>
           </div>
         {% endif %}
       {% else %}

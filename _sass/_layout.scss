@@ -8,9 +8,18 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
-  // Subtle dot grid: grey dots on white in light mode, faint white dots in dark mode
-  background-image: radial-gradient(var(--global-dot-color) 1px, transparent 1.2px);
-  background-size: 22px 22px;
+  // Three layers, top to bottom:
+  // 1. faint paper grain: random noise, so it reads as texture rather than a pattern
+  // 2. a veil in the page colour over the middle, so nothing patterned sits behind text
+  // 3. the dot grid, left visible only in the side margins (gone on narrow screens)
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(90deg, transparent, var(--global-bg-color) calc(50% - 520px), var(--global-bg-color) calc(50% + 520px), transparent),
+    radial-gradient(var(--global-dot-color) 1px, transparent 1.2px);
+  background-size:
+    200px 200px,
+    auto,
+    22px 22px;
   background-attachment: fixed;
 
   h1,

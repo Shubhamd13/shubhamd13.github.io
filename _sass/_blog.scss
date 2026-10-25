@@ -165,3 +165,215 @@
     }
   }
 }
+
+// Paper-style reading view for blog posts
+
+body.paper-page {
+  background-color: var(--global-paper-page-bg-color);
+
+  // posts get a wider reading area than the rest of the site
+  .container[role="main"] {
+    max-width: 1140px;
+  }
+
+  .post {
+    background-color: var(--global-paper-bg-color);
+    border: 1px solid var(--global-paper-border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    padding: 3rem;
+    margin-bottom: 3rem;
+
+    .post-header {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+
+    .post-title {
+      font-family: "Spectral", Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-content {
+      font-family: "Spectral", Georgia, serif;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      // keep long URLs and inline code from pushing past the card
+      overflow-wrap: break-word;
+
+      p,
+      ul,
+      ol {
+        margin-bottom: 1.25em;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Spectral", Georgia, serif;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-top: 2.25rem;
+        margin-bottom: 0.75rem;
+      }
+
+      h2 {
+        font-size: 1.625rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      h4 {
+        font-size: 1.125rem;
+      }
+
+      code,
+      pre {
+        font-size: 0.875rem;
+      }
+
+      blockquote > :last-child {
+        margin-bottom: 0;
+      }
+
+      img,
+      video,
+      iframe {
+        max-width: 100%;
+        height: auto;
+      }
+
+      // embedded videos fill the column at 16:9 instead of the 300x150 iframe default
+      iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+
+      table {
+        width: 100%;
+        margin: 1.5rem 0;
+        border-collapse: collapse;
+        font-family: var(--font-family-sans-serif);
+
+        th,
+        td {
+          font-size: 0.9rem;
+          line-height: 1.5;
+          padding: 0.6rem 0.75rem;
+          border: 1px solid var(--global-divider-color);
+          vertical-align: top;
+          overflow-wrap: anywhere;
+        }
+
+        th {
+          background-color: var(--global-code-bg-color);
+        }
+      }
+    }
+  }
+
+  // collapsible contents box, shown when the sidebar is hidden
+  .post-toc-inline {
+    font-family: var(--font-family-sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    ul ul {
+      margin-top: 0;
+    }
+  }
+
+  // wide displays: roomier card, ~75 characters per line
+  @media (min-width: 1200px) {
+    .post {
+      padding: 3.5rem 4rem;
+    }
+  }
+
+  // tablets and below: no sidebar, contents box instead
+  @media (max-width: 991.98px) {
+    #toc-sidebar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .post {
+      padding: 2rem;
+    }
+  }
+
+  // phones: edge-to-edge paper, slightly smaller type
+  @media (max-width: 575.98px) {
+    .container[role="main"] {
+      margin-top: 1rem !important;
+    }
+
+    .post {
+      margin: 0 -15px 2rem;
+      padding: 1.75rem 1.25rem;
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      box-shadow: none;
+
+      .post-title {
+        font-size: 1.75rem;
+      }
+
+      .post-content {
+        font-size: 1.0625rem;
+        line-height: 1.7;
+
+        h2 {
+          font-size: 1.375rem;
+        }
+
+        h3 {
+          font-size: 1.175rem;
+        }
+
+        h4 {
+          font-size: 1.05rem;
+        }
+
+        // wide tables scroll sideways instead of running off the page
+        table {
+          display: block;
+          overflow-x: auto;
+        }
+
+        th,
+        td {
+          font-size: 0.85rem;
+          padding: 0.5rem;
+          // stops one long cell from squeezing its neighbours to a word per line
+          min-width: 6.5rem;
+        }
+      }
+    }
+  }
+}

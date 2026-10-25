@@ -65,6 +65,11 @@ layout: default
         {% toc %}
       </div>
       <hr>
+    {% elsif page.toc and page.toc.sidebar %}
+      <details class="post-toc-inline d-lg-none">
+        <summary>Contents</summary>
+        {% toc %}
+      </details>
     {% endif %}
     <div id="markdown-content">
       {{ content }}

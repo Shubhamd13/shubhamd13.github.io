@@ -1,0 +1,120 @@
+/*******************************************************************************
+ * Robot gripper cursor (desktop) and tap gripper (touch screens)
+ ******************************************************************************/
+
+// Desktop: the gripper stays open (red LED) everywhere, links included, and only
+// closes (green LED) while a mouse button is held. The hotspot (16 4) sits between
+// the fingertips. !important so links and buttons don't switch to the pointing hand.
+@media (hover: hover) and (pointer: fine) {
+  html,
+  html * {
+    cursor:
+      url("../img/cursor/gripper-open.svg") 16 4,
+      auto !important;
+  }
+
+  html.gripper-closed,
+  html.gripper-closed * {
+    cursor:
+      url("../img/cursor/gripper-closed.svg") 16 4,
+      pointer !important;
+  }
+
+  // keep the text caret where people type
+  html input[type="text"],
+  html input[type="search"],
+  html input[type="email"],
+  html textarea,
+  html [contenteditable="true"],
+  html.gripper-closed input[type="text"],
+  html.gripper-closed input[type="search"],
+  html.gripper-closed input[type="email"],
+  html.gripper-closed textarea,
+  html.gripper-closed [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+// Touch screens: the same gripper, upside down, drops onto the tap point,
+// closes its jaws (LED turns green), and lifts away
+.gripper-tap {
+  position: fixed;
+  z-index: 2000;
+  width: 36px;
+  height: 36px;
+  // put the fingertips (y ≈ 29.5 of 32 once flipped) on the tap point
+  margin: -33px 0 0 -18px;
+  overflow: visible;
+  pointer-events: none;
+  animation: gripper-tap-move 0.7s ease-out forwards;
+
+  path {
+    fill: #2f3542;
+    stroke: #ffffff;
+    stroke-width: 1.4;
+    stroke-linejoin: round;
+  }
+
+  .gripper-led {
+    fill: #ff6b6b;
+    animation: gripper-tap-led 0.7s step-end forwards;
+  }
+
+  .gripper-jaw-l,
+  .gripper-jaw-r {
+    animation: 0.7s ease-in-out forwards;
+  }
+
+  .gripper-jaw-l {
+    animation-name: gripper-tap-jaw-l;
+  }
+
+  .gripper-jaw-r {
+    animation-name: gripper-tap-jaw-r;
+  }
+}
+
+@keyframes gripper-tap-move {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  25%,
+  65% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes gripper-tap-jaw-l {
+  0%,
+  30% {
+    transform: translateX(0);
+  }
+  50%,
+  100% {
+    transform: translateX(4.5px);
+  }
+}
+
+@keyframes gripper-tap-jaw-r {
+  0%,
+  30% {
+    transform: translateX(0);
+  }
+  50%,
+  100% {
+    transform: translateX(-4.5px);
+  }
+}
+
+@keyframes gripper-tap-led {
+  50%,
+  100% {
+    fill: #2ed573;
+  }
+}

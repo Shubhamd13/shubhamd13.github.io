@@ -77,8 +77,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Blog # blog_name will be displayed in your blog page
+blog_description: Notes on robot navigation, simulation, and the road to a PhD
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -247,7 +247,7 @@ jekyll-archives:
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
 
-display_tags: ["robotics", "navigation", "phd"] # these tags will be displayed on the front page of your blog
+display_tags: ["robotics", "navigation"] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
@@ -437,7 +437,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Cinzel:600,700|Grenze+Gotisch:700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Cinzel:600,700|Grenze+Gotisch:700|Spectral:400,400i,600,700|Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

@@ -503,42 +503,6 @@ html[data-theme="dark"] .project-card {
   position: relative;
 }
 
-// Robot gripper cursor: open gripper by default, closed gripper over anything clickable.
-// The hotspot (16 4) sits between the fingertips.
-html,
-body {
-  cursor:
-    url("../img/cursor/gripper-open.svg") 16 4,
-    auto;
-}
-
-a,
-button,
-summary,
-label[for],
-select,
-[role="button"],
-.btn,
-.card.hoverable,
-.page-link,
-.nav-link,
-input[type="submit"],
-input[type="button"],
-input[type="checkbox"],
-input[type="radio"] {
-  cursor:
-    url("../img/cursor/gripper-closed.svg") 16 4,
-    pointer !important;
-}
-
-input[type="text"],
-input[type="search"],
-input[type="email"],
-textarea,
-[contenteditable="true"] {
-  cursor: text;
-}
-
 // Bootstrap hardcodes a dark table text color; follow the theme instead
 .table {
   color: var(--global-text-color);

@@ -6,7 +6,7 @@
 
 :root {
   color-scheme: light;
-  --global-bg-color: #{v.$white-color};
+  --global-bg-color: #faf8f5;
   --global-code-bg-color: #{v.$code-bg-color-light};
   --global-text-color: #{v.$black-color};
   --global-text-color-light: #{v.$grey-color};
@@ -20,6 +20,9 @@
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-dot-color: rgba(0, 0, 0, 0.14);
   --global-card-bg-color: #{v.$white-color};
+  --global-paper-page-bg-color: #faf8f5;
+  --global-paper-bg-color: #{v.$white-color};
+  --global-paper-border-color: rgba(0, 0, 0, 0.06);
   --global-highlight-color: #{v.$red-color-dark};
   --global-back-to-top-bg-color: rgba(
     #{color.channel(v.$black-color, "red", v.$space: rgb)},
@@ -91,6 +94,9 @@ html[data-theme="dark"] {
   --global-divider-color: #424246;
   --global-dot-color: rgba(255, 255, 255, 0.11);
   --global-card-bg-color: #{v.$grey-900};
+  --global-paper-page-bg-color: #{v.$grey-color-dark};
+  --global-paper-bg-color: #{v.$grey-900};
+  --global-paper-border-color: rgba(255, 255, 255, 0.06);
   --global-back-to-top-bg-color: rgba(
     #{color.channel(v.$white-color, "red", v.$space: rgb)},
     #{color.channel(v.$white-color, "green", v.$space: rgb)},
