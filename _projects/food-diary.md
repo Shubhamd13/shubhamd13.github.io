@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: Food Diary
 description: A personal health log I built to find my IBS triggers, by keeping meals, bowel movements, mood, and medication on one timeline.
 img: assets/img/projects/food-diary/login.png
@@ -7,6 +7,8 @@ importance: 1
 category: fun
 keywords: food diary app, IBS tracker, symptom tracker, health log, React, Firebase, Cloud Firestore, Firebase Authentication, Firestore security rules, progressive web app
 og_image: https://shubhamd13.github.io/assets/img/projects/food-diary/login.png
+toc:
+  sidebar: left
 ---
 
 <div class="row justify-content-center">

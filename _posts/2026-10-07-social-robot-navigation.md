@@ -1,18 +1,22 @@
 ---
 layout: post
-title: "Simulators for Social Robot Navigation: A Practical Guide to Installing Arena and SEAN"
+title: "How to Install Arena-Rosnav and SEAN: Social Navigation Simulators"
 date: 2026-10-07 00:00:00-0700
-description: How to pick a version of Arena or SEAN, which simulators each one really supports, and how to get past the install problems people run into
+last_updated: 2026-10-24
+description: Which Arena-Rosnav (ROS 1, ROS 2 Humble, Jazzy) or SEAN version to install, which simulators each one supports, and fixes for common install errors.
+keywords: arena-rosnav, SEAN, social robot navigation, social navigation simulator, crowd simulation, ROS 2, Isaac Sim, Gazebo, Unity
 tags: robotics navigation simulation
 categories: robotics
 related_posts: false
-og_image: assets/img/blog/social-robot-navigation-share.png
-og_image_alt: "Share card: Simulators for Social Robot Navigation, a practical guide to installing Arena and SEAN, by Shubham Derhgawen"
+og_image: assets/img/blog/social-robot-navigation-og.png
+og_image_alt: "Social Robot Navigation: installing Arena and SEAN. A robot plans a curved path around a group of people and their personal space."
 toc:
   sidebar: left
 ---
 
-Robots already work in some of the places we eat and shop. On a layover in Singapore, I remember seeing one at Din Tai Fung, and the photo below shows another collecting used dishes at a Starbucks there. Over the next few years, we'll share many more spaces with robots: cafés, hospitals, airports, and offices.
+This guide covers how to install [Arena-Rosnav](https://arena-rosnav.org/) (Arena) and [SEAN](https://sean.interactive-machines.com), two of the most complete open-source simulators for social robot navigation: which version to pick for your ROS distro, which simulators each version actually runs, and how to fix the install errors that come up most often.
+
+**Social robot navigation** means moving a robot through spaces it shares with people: keeping a comfortable distance, waiting at a doorway, going around a group instead of through it, and moving in a way people can predict. The obstacles have intentions, and they react to the robot as much as it reacts to them. Robots like the one below, which collects used dishes at a Starbucks in Singapore, already do this in cafés, and more are coming to hospitals, airports, and offices.
 
 <div class="row justify-content-center">
   <div class="col-sm-8 col-md-6 mt-3 mt-md-0">
@@ -20,13 +24,11 @@ Robots already work in some of the places we eat and shop. On a layover in Singa
   </div>
 </div>
 
-Getting from A to B is the easy part for these robots. The hard part is doing it among people: keeping a comfortable distance, waiting at a doorway, going around a group instead of through it, and moving in a way people can predict. That is **social robot navigation**. The obstacles have intentions, and they react to the robot as much as it reacts to them.
+Testing with real crowds is slow, expensive, and sometimes unsafe, so most research starts in simulation. Arena and SEAN have each gone through several versions, and each version has its own paper, code, ROS distro, and docs, which don't always agree. Finding the exact version a paper used can take days.
 
-Testing this with real crowds is slow, expensive, and sometimes unsafe, so most research starts in simulation. Two of the most complete open-source simulators for it are [Arena](https://arena-rosnav.org/) and [SEAN](https://sean.interactive-machines.com), and I use and value both. Installing them is another story. Each has gone through several versions, every version has its own paper, code, ROS version, and docs, and these don't always agree. Getting the exact version a paper used can take days.
+If you're new to social navigation, start with the table below. If you're reproducing a specific paper, go to the version tables and to [When the install breaks](#when-the-install-breaks). Every link in the post is also collected in [Links](#links) at the end.
 
-This post is the guide I wish I'd had. If you're new to social navigation, it will help you pick a simulator and get it running. If you know the field and you're stuck reproducing a specific paper, skip ahead to the version tables and to the section on what breaks. Links are on the words as you go, and all of them are collected again at the end.
-
-> **Last checked: October 24, 2026.** If something here is out of date, let me know and I'll update it.
+> If something here is out of date, [email me](mailto:sderh001@ucr.edu) and I'll update it.
 
 ## Which one should I install?
 
@@ -62,17 +64,17 @@ Arena started in 2021 as a 2D simulator for training reinforcement learning plan
 | [Arena 5.0](https://www.roboticsproceedings.org/rss21/p092.html)    | RSS 2025       | [`humble` branch](https://github.com/Arena-Rosnav/arena-rosnav/tree/humble) at the time, now [`voshch/Arena`](https://github.com/voshch/Arena)                | ROS 2 Humble, now Jazzy |
 | [Arena-Bench 2.0](https://doi.org/10.1109/IROS60139.2025.11246895)  | IROS 2025      | [`Arena-Rosnav`](https://github.com/Arena-Rosnav) org                                                                                                         | ROS 2                   |
 
-One thing trips people up here. The papers point to the [`Arena-Rosnav`](https://github.com/Arena-Rosnav) GitHub organization, but the project pages now link `voshch/Arena`, Volodymyr's own repo, which he created in October 2025. If you're reproducing a specific paper, the branches and tags of `Arena-Rosnav/arena-rosnav` are closer to what it used. The group has since released [PEDS](https://arena-rosnav.org/pedsral26/), a newer benchmark accepted to RA-L in 2026.
+Note that the papers point to the [`Arena-Rosnav`](https://github.com/Arena-Rosnav) GitHub organization, but the project pages now link `voshch/Arena`, Volodymyr's own repo, which he created in October 2025. If you're reproducing a specific paper, the branches and tags of `Arena-Rosnav/arena-rosnav` are closer to what it used. The group has since released [PEDS](https://arena-rosnav.org/pedsral26/), a newer benchmark accepted to RA-L in 2026.
 
 ### Which simulators does each version really support?
 
-This is where most of the confusion starts. The simulator decides what you install, and papers, project pages, and code don't always list the same ones.
+The simulator decides what you install, and papers, project pages, and code don't always list the same ones.
 
-Take Arena 5.0. Figure 2 of [its paper](https://www.roboticsproceedings.org/rss21/p092.html) puts the Gazebo, Unity, and NVIDIA Isaac logos side by side, and the text calls Unity and Isaac its photorealistic simulators. The [project page](https://arena-rosnav.org/arena-5/) goes further and lists four: Isaac Sim, Unity, Gazebo, and Flatland. So you'd expect Unity to work. It doesn't, at least not on ROS 2.
+Take Arena 5.0. Figure 2 of [its paper](https://www.roboticsproceedings.org/rss21/p092.html) puts the Gazebo, Unity, and NVIDIA Isaac logos side by side, and the text calls Unity and Isaac its photorealistic simulators. The [project page](https://arena-rosnav.org/arena-5/) lists four: Isaac Sim, Unity, Gazebo, and Flatland. In the code, however, Unity doesn't run on ROS 2.
 
 Unity support only ever existed on the ROS 1 branch, as a [prebuilt binary](https://github.com/Arena-Rosnav/arena-unity/releases) last released in June 2024. When Arena 5.0 was presented at RSS in June 2025, its code could launch Gazebo or Isaac Sim. Today's code adds [MuJoCo](https://docs.arena-rosnav.org/en/latest/arena_mujoco/) and [flatsim](https://docs.arena-rosnav.org/en/latest/flatsim/), a new 2D simulator that is not the older Flatland. That matches what the [main Arena site](https://arena-rosnav.org/) lists now, so trust the main site over the 5.0 project page.
 
-There's also a naming trap. The paper says Isaac Gym, but the code uses Isaac Sim, which is a different NVIDIA product. Search for Isaac Sim when you debug.
+The paper also mentions Isaac Gym, but the code uses Isaac Sim, which is a different NVIDIA product. Search for Isaac Sim when you debug.
 
 Here is the full picture for every version:
 
@@ -90,7 +92,7 @@ In short: if you need Unity, use Arena 3.0 on ROS 1. If you need Isaac Sim, use 
 
 ### Which docs go with which version?
 
-The docs have the same problem. Each version has its own site, and the older ones have moved or disappeared:
+Each version has its own docs site, and the older ones have moved or disappeared:
 
 - **Arena 5.0:** [docs.arena-rosnav.org](https://docs.arena-rosnav.org/en/latest/), generated from the `voshch/Arena` READMEs. The old [arena-dev.readthedocs.io](https://arena-dev.readthedocs.io/) address redirects there.
 - **Arena 4.0:** [arena-rosnav.readthedocs.io](https://arena-rosnav.readthedocs.io/en/latest/), which covers the `humble` branch.
@@ -171,11 +173,11 @@ The guide asks for about 30 GB of disk and half an hour. Two optional scripts co
 roslaunch arena_bringup start_arena.launch simulator:=gazebo   # or flatland, unity
 ```
 
-The guide pipes these scripts straight into `bash`. Download them first instead, as above, so their yes/no prompts can read your answers. If the branch still fights you, a lab that uses Arena 3.0 [recommends](https://github.com/Arena-Rosnav/arena-rosnav/issues/219) its [ivaROS fork](https://github.com/ivaROS/arena-rosnav), which installs on Noetic. Keep in mind that ROS Noetic reached [end of life on May 31, 2025](https://discourse.openrobotics.org/t/ros-noetic-end-of-life-may-31-2025/43160), so you won't get ROS updates or security fixes on this path.
+The guide pipes these scripts straight into `bash`. Download them first instead, as above, so their yes/no prompts can read your answers. If the install still fails, a lab that uses Arena 3.0 [recommends](https://github.com/Arena-Rosnav/arena-rosnav/issues/219) its [ivaROS fork](https://github.com/ivaROS/arena-rosnav), which installs on Noetic. Keep in mind that ROS Noetic reached [end of life on May 31, 2025](https://discourse.openrobotics.org/t/ros-noetic-end-of-life-may-31-2025/43160), so you won't get ROS updates or security fixes on this path.
 
 ### When the install breaks
 
-Even experienced researchers hit walls here. Shuijing Liu, who maintains the [awesome-robot-social-navigation](https://github.com/Shuijing725/awesome-robot-social-navigation) list, [wrote](https://github.com/Shuijing725/awesome-robot-social-navigation/issues/12#issuecomment-3837153733) that Arena 4.0 is "not super easy to install." The same few problems come up again and again in the issue trackers, so here they are with the fixes that worked:
+Shuijing Liu, who maintains the [awesome-robot-social-navigation](https://github.com/Shuijing725/awesome-robot-social-navigation) list, [described](https://github.com/Shuijing725/awesome-robot-social-navigation/issues/12#issuecomment-3837153733) Arena 4.0 as "not super easy to install." The same few problems come up repeatedly in the issue trackers. Here they are, with the fixes that worked:
 
 1. **Packages like `cv_bridge`, `vision_msgs`, or `pcl_msgs` fail to build (4.0).** In [issue #215](https://github.com/Arena-Rosnav/arena-rosnav/issues/215), the maintainer's first suspect is a ROS 2 Humble that's already sourced in your shell, usually from `~/.bashrc`. Comment out `source /opt/ros/humble/setup.bash`, deactivate conda or any venv, open a fresh terminal, and run the installer again.
 2. **rosdep is missing on a fresh system.** Users in the same thread got further after installing and initializing it: `python3-rosdep2` from Ubuntu, or `python3-rosdep` from the ROS 2 apt repository, then `sudo rosdep init` and `rosdep update`.
@@ -185,7 +187,7 @@ Even experienced researchers hit walls here. Shuijing Liu, who maintains the [aw
 6. **Docker says "Unknown runtime specified 'nvidia'" (5.0).** Run `sudo nvidia-ctk runtime configure --runtime=docker` and restart Docker. If RViz crashes with an OpenGL error, add `LIBGL_ALWAYS_SOFTWARE=1` to the `.env` file in your workspace.
 7. **Your system changed in ways you didn't expect.** The 4.0 installer offers to delete apt source files for other ROS versions (the default answer is yes), and it adds pyenv and Poetry to your shell config. The ROS 1 installers add lines to `~/.bashrc` and `~/.zshrc`. Use a spare machine or a fresh Ubuntu install if you can, or the 5.0 container.
 
-If you're wondering whether Arena 5.0's Isaac Sim support is open source at all, you're not alone. [Issue #213](https://github.com/Arena-Rosnav/arena-rosnav/issues/213) asked exactly that in July 2025, and it's still open. It was asked on `Arena-Rosnav/arena-rosnav`, whose default branch is the ROS 1 `master`. The Isaac code was on the `humble` branch at the time, and today it lives in `voshch/Arena`. That support matters, because very few social navigation simulators run on the GPU, a gap the [same awesome-list thread](https://github.com/Shuijing725/awesome-robot-social-navigation/issues/12) points out.
+[Issue #213](https://github.com/Arena-Rosnav/arena-rosnav/issues/213), opened in July 2025, asks whether Arena 5.0's Isaac Sim support is open source. It was filed on `Arena-Rosnav/arena-rosnav`, whose default branch is the ROS 1 `master`, so the Isaac code isn't visible there. At the time it was on the `humble` branch, and today it lives in `voshch/Arena`. Isaac Sim support matters, because very few social navigation simulators run on the GPU, a gap the [same awesome-list thread](https://github.com/Shuijing725/awesome-robot-social-navigation/issues/12) points out.
 
 ### See it running
 
@@ -248,15 +250,15 @@ Arena and SEAN aren't the only options. Shuijing Liu's [awesome-robot-social-nav
 
 For background on the crowd simulators many of these build on, see [_A Review of Software for Crowd Simulation_](https://urban-analytics.github.io/dust/docs/ped_sim_review.pdf).
 
-## A note on using LLMs for installs
+## Using LLMs for installs
 
-It's tempting to paste a repo link into an LLM and ask for install steps. LLMs are good at reading build errors and porting ROS 1 code to ROS 2. But three things stack up against you here:
+LLMs are useful for reading build errors and porting ROS 1 code to ROS 2. Generating install steps from a repo link is less reliable for these projects, for three reasons:
 
-1. **The sources disagree.** Docs for 4.0 and 5.0, ROS 1 and ROS 2 branches, and moved links get blended into one set of steps, and you end up running a Humble script on a Jazzy checkout. Even a paper and its own code can disagree, like Arena 5.0's Figure 2 showing Unity.
-2. **LLMs hallucinate.** A model fills gaps with plausible package names or launch arguments that don't exist, and it sounds just as confident about those.
-3. **Dependencies are hard anyway.** The OS, ROS distro, Python, Poetry, CUDA, and the Gazebo, Unity, or Isaac version all have to line up.
+1. **The sources disagree.** Docs for 4.0 and 5.0, ROS 1 and ROS 2 branches, and moved links can get blended into one set of steps, such as a Humble script run on a Jazzy checkout. Even a paper and its own code can disagree, like Arena 5.0's Figure 2 showing Unity.
+2. **Gaps get filled with guesses.** A model may suggest package names or launch arguments that don't exist.
+3. **The dependency chain is long.** The OS, ROS distro, Python, Poetry, CUDA, and the Gazebo, Unity, or Isaac version all have to line up.
 
-Together, these don't fail at step one. They give you commands that look right, run for an hour, and then break. So ground the model: pick your version first, give it the README from your branch along with your OS and ROS distro, and ask which file each step comes from.
+The result is usually commands that look right, run for an hour, and then fail. Results improve when the model has the README from your exact branch, along with your OS and ROS distro, and is asked which file each step comes from.
 
 ## Checklist
 
@@ -268,9 +270,9 @@ Together, these don't fail at step one. They give you commands that look right, 
 6. **If it fails, re-run it, then read the open issues.** Your error is often already in [issue #215](https://github.com/Arena-Rosnav/arena-rosnav/issues/215).
 7. **Write down the commit, and cite the version you used.** Each version is a separate paper.
 
-## Thank you
+## Acknowledgments
 
-A big thank you to Linh Kästner, Volodymyr Shcherbyna, and everyone who has worked on Arena; to Nathan Tsoi, Marynel Vázquez, and the whole SEAN team; and to Shuijing Liu for the awesome-robot-social-navigation list. Building and maintaining these tools takes years of work, and this community is better for it. If you find a broken link in either project, a small pull request helps everyone who comes after you. And if I got something wrong here, reach out and I'll fix it.
+Thanks to Linh Kästner, Volodymyr Shcherbyna, and everyone who has worked on Arena; to Nathan Tsoi, Marynel Vázquez, and the SEAN team; and to Shuijing Liu for the awesome-robot-social-navigation list. Building and maintaining these tools takes years of work. If I got something wrong here, [email me](mailto:sderh001@ucr.edu) and I'll fix it.
 
 ## Links
 

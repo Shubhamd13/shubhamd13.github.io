@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: Autonomous Warehouse Pick-and-Deliver Robot
 description: A TurtleBot 3 with a manipulator arm that maps a warehouse, plans a collision-free route with RRT*, and follows it in Gazebo.
 img: assets/img/gazebo.png
@@ -7,6 +7,8 @@ importance: 1
 category: work
 keywords: mobile manipulation, warehouse robot, TurtleBot3, OpenMANIPULATOR-X, ROS, Gazebo, SLAM, GMapping, RRT*, path planning, occupancy grid, UC Riverside
 og_image: https://shubhamd13.github.io/assets/img/gazebo.png
+toc:
+  sidebar: left
 ---
 
 <div class="row justify-content-center">

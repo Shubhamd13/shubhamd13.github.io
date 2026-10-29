@@ -50,6 +50,10 @@
     {% assign is_blog_post = true %}
   {% endunless %}
 {% endif %}
+{% assign is_project = false %}
+{% if page.collection == 'projects' %}
+  {% assign is_project = true %}
+{% endif %}
 
 {% if site.serve_og_meta %}
   {% comment %} og_image may be a site path (assets/img/...) or a full URL; LinkedIn and others need it absolute {% endcomment %}
@@ -60,10 +64,10 @@
 
   <!-- OpenGraph -->
   <meta property="og:site_name" content="{{ title }}">
-  <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
+  <meta property="og:type" content="{% if is_blog_post or is_project %}article{% else %}website{% endif %}">
   <meta
     property="og:title"
-    content="{% if is_blog_post %}{{ page.title }}{% elsif page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}"
+    content="{% if is_blog_post or is_project %}{{ page.title }}{% elsif page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}"
   >
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
@@ -250,10 +254,20 @@
             "@type": "Person",
             "name": "{{ author_name }}"
         },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}",
+        "@type": "{% if is_blog_post %}BlogPosting{% elsif is_project %}Article{% else %}WebSite{% endif %}",
+        "description": {{ page.description | default: site.description | strip | jsonify }},
+        "headline": {{ page.title | default: title | strip | jsonify }},
+        {% if is_blog_post %}
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "dateModified": "{{ page.last_modified_at | default: page.last_updated | default: page.date | date_to_xmlschema }}",
+        {% endif %}
+        {% if is_blog_post or is_project %}
+        {% if page.og_image %}
+        "image": "{{ page.og_image | absolute_url }}",
+        {% endif %}
+        "mainEntityOfPage": "{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}",
+        {% endif %}
         {% if sameaslinks != blank %}
         "sameAs": {{ sameaslinks | jsonify }},
         {% endif %}

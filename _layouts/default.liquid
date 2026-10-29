@@ -16,14 +16,14 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %} {% if page.layout == 'post' %}paper-page{% endif %}">
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %} {% if page.layout == 'post' or page.layout == 'project' %}paper-page{% endif %}">
     <!-- Header -->
     {% include header.liquid %}
 
     <!-- Content -->
     <div class="container mt-5" role="main">
       {% if page.toc and page.toc.sidebar %}
-        {% if page.layout == 'post' %}
+        {% if page.layout == 'post' or page.layout == 'project' %}
           {% assign toc_col = 'col-lg-3' %}
           {% assign content_col = 'col-lg-9' %}
         {% else %}

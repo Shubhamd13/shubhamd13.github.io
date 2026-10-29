@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: Sample-Efficient RL with Expert Data Augmentation
 description: Using expert demonstrations to cut the number of environment steps PPO needs on LunarLander-v2.
 img: assets/img/LunarLander.gif
@@ -7,6 +7,8 @@ importance: 1
 category: work
 keywords: reinforcement learning, imitation learning, demonstration-augmented policy gradient, DAPG, PPO, behavior cloning, sample efficiency, LunarLander, PyTorch, Optuna, UC Riverside
 og_image: https://shubhamd13.github.io/assets/img/LunarLander.gif
+toc:
+  sidebar: left
 ---
 
 <div class="row justify-content-center">

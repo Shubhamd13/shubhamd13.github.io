@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: 12-DOF Quadruped Robot
 description: A four-legged walking robot we designed in SolidWorks, 3D-printed, wired up, and controlled over Wi-Fi from a Python GUI.
 img: assets/img/Assembly.png
@@ -7,6 +7,8 @@ importance: 1
 category: work
 keywords: quadruped robot, 12-DOF legged robot, legged locomotion, robot gait, Arduino UNO R4 WiFi, PCA9685 servo driver, ESP32-CAM, SolidWorks, 3D printing, robotics hardware, UC Riverside
 og_image: https://shubhamd13.github.io/assets/img/Assembly.png
+toc:
+  sidebar: left
 ---
 
 <div class="row justify-content-center">

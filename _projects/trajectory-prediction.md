@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: Scene and Social Awareness in Trajectory Prediction
 description: Re-ranking a predictor's candidate futures with Direct Preference Optimization, so the planner sees safe, socially reasonable trajectories first.
 img: assets/img/trajectory_scores_visualization.png
@@ -7,6 +7,8 @@ importance: 1
 category: work
 keywords: trajectory prediction, autonomous driving, Direct Preference Optimization, DPO, preference learning, social navigation, highway-env, SocialVAE, motion forecasting, UC Riverside
 og_image: https://shubhamd13.github.io/assets/img/trajectory_scores_visualization.png
+toc:
+  sidebar: left
 ---
 
 <div class="row justify-content-center">

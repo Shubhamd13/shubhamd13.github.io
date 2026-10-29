@@ -120,12 +120,31 @@ pagination:
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
 
+    {% assign thumbnail = post.thumbnail | default: post.og_image %}
+    {% comment %} dark-mode version: thumbnail_dark, else a "-dark" sibling of the image if one exists {% endcomment %}
+    {% assign thumbnail_dark = post.thumbnail_dark %}
+    {% if thumbnail and thumbnail_dark == nil %}
+      {% assign ext = thumbnail | split: '.' | last %}
+      {% assign dark_suffix = '-dark.' | append: ext %}
+      {% assign dot_ext = '.' | append: ext %}
+      {% assign dark_candidate = thumbnail | replace: dot_ext, dark_suffix | prepend: '/' | replace_first: '//', '/' %}
+      {% assign dark_match = site.static_files | where: 'path', dark_candidate | first %}
+      {% if dark_match %}{% assign thumbnail_dark = dark_candidate %}{% endif %}
+    {% endif %}
     <li>
 
-{% if post.thumbnail %}
+{% if thumbnail %}
 
 <div class="row">
-          <div class="col-sm-9">
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <a href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      <img class="post-thumbnail{% if thumbnail_dark %} only-light{% endif %}" src="{{ thumbnail | relative_url }}" width="1200" height="627" loading="lazy" alt="">
+      {% if thumbnail_dark %}
+        <img class="post-thumbnail only-dark" src="{{ thumbnail_dark | relative_url }}" width="1200" height="627" loading="lazy" alt="">
+      {% endif %}
+    </a>
+  </div>
+          <div class="col-sm-8">
 {% endif %}
         <h3>
         {% if post.redirect == blank %}
@@ -174,13 +193,9 @@ pagination:
           {% endif %}
     </p>
 
-{% if post.thumbnail %}
+{% if thumbnail %}
 
 </div>
-
-  <div class="col-sm-3">
-    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%" alt="image">
-  </div>
 </div>
 {% endif %}
     </li>

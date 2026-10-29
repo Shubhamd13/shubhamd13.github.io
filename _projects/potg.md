@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: Prints On The Go
 description: Upload a document from your phone, and the photocopy shop's printer prints it with nobody at the counter.
 img: assets/img/potg-logo.png
@@ -9,6 +9,8 @@ mermaid:
   enabled: true
 keywords: Prints On The Go, Win32 print spooler API, WritePrinter, unattended printing, PHP, MySQL, libcurl, C++, DBMS project, Savitribai Phule Pune University
 og_image: https://shubhamd13.github.io/assets/img/potg-logo.png
+toc:
+  sidebar: left
 ---
 
 <div class="row justify-content-center">

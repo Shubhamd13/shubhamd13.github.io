@@ -50,6 +50,18 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
 
+    // share image (post.thumbnail, or og_image) shown left of the listing
+    // no display rule here, so the theme's .only-light/.only-dark can hide one of the pair
+    .post-thumbnail {
+      vertical-align: top;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1200 / 627;
+      object-fit: cover;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 0.375rem;
+    }
+
     .post-meta {
       color: var(--global-text-color-light);
       font-size: 0.875rem;
@@ -196,6 +208,15 @@ body.paper-page {
       line-height: 1.2;
       letter-spacing: -0.01em;
       margin-bottom: 0.75rem;
+    }
+
+    // project pages: one-line summary under the title
+    .post-header .post-description {
+      font-family: "Spectral", Georgia, serif;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: var(--global-text-color-light);
+      margin-bottom: 1.5rem;
     }
 
     .post-content {
