@@ -44,15 +44,37 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-simulators-for-social-robot-navigation-a-practical-guide-to-installing-arena-and-sean",
+        },{id: "post-social-robot-navigation-phd-labs-how-20-labs-want-you-to-apply",
         
-          title: "Simulators for Social Robot Navigation: A Practical Guide to Installing Arena and SEAN...",
+          title: "Social Robot Navigation PhD Labs: How 20 Labs Want You to Apply",
         
-        description: "How to pick a version of Arena or SEAN, which simulators each one really supports, and how to get past the install problems people run into",
+        description: "How 20 social robot navigation labs want PhD applicants to apply, get in touch, and prepare, taken from each lab&#39;s own prospective-student page.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/social-navigation-phd-labs/";
+          
+        },
+      },{id: "post-how-to-install-arena-rosnav-and-sean-social-navigation-simulators",
+        
+          title: "How to Install Arena-Rosnav and SEAN: Social Navigation Simulators",
+        
+        description: "Which Arena-Rosnav (ROS 1, ROS 2 Humble, Jazzy) or SEAN version to install, which simulators each one supports, and fixes for common install errors.",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2026/social-robot-navigation/";
+          
+        },
+      },{id: "post-how-to-apply-to-robotics-phd-programs-a-practical-guide",
+        
+          title: "How to Apply to Robotics PhD Programs: A Practical Guide",
+        
+        description: "How to apply to a robotics PhD, from starting research early and choosing a program to contacting professors, the statement of purpose, letters, and deadlines.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/applying-to-phd/";
           
         },
       },{id: "projects-sample-efficient-rl-with-expert-data-augmentation",
@@ -112,6 +134,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/shubham-d-021a56186", "_blank");
+        },
+      },{
+        id: 'social-leetcode',
+        title: 'LeetCode',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://leetcode.com/u/shubhamd1310/", "_blank");
         },
       },{
       id: 'light-theme',
