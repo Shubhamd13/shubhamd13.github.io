@@ -13,7 +13,7 @@ This page lists research papers where I contributed to project execution (for ex
 
 ### Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving
 
-- Venue: CVPR 2026 Workshop
+- Venue: CVPR 2026
 - Project page: [https://dmw-cvpr.github.io/](https://dmw-cvpr.github.io/)
 - Contribution context: Acknowledged for integrating Logitech G-series steering wheel and pedals into the setup and supporting driving data recording.
 

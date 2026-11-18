@@ -17,7 +17,7 @@ toc:
   </div>
 </div>
 
-**Self-proposed final project for CS 267, UC Riverside, Fall 2025** · with Aadhar Chauhan · [Source on GitHub](https://github.com/Shubhamd13/Social-Awareness-in-Trajectory-Prediction) · [Report (PDF)](https://github.com/Shubhamd13/Social-Awareness-in-Trajectory-Prediction/blob/main/CS267_Final_Report.pdf)
+**Self-proposed final project for EE 267, UC Riverside, Fall 2025** · with Aadhar Chauhan · [Source on GitHub](https://github.com/Shubhamd13/Social-Awareness-in-Trajectory-Prediction) · [Report (PDF)](https://github.com/Shubhamd13/Social-Awareness-in-Trajectory-Prediction/blob/main/CS267_Final_Report.pdf)
 
 Teams chose their own final-project topics, and this problem and approach were ours.
 

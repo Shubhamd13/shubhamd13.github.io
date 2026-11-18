@@ -236,7 +236,7 @@
       "name": "Scene and Social Awareness in Trajectory Prediction",
       "url": "/projects/trajectory-prediction/",
       "startDate": "2025-12-01",
-      "summary": "Self-proposed final project for CS 267, with Aadhar Chauhan.",
+      "summary": "Self-proposed final project for EE 267, with Aadhar Chauhan.",
       "highlights": [
         "Trained a trajectory-selection policy with Direct Preference Optimization over kinematic rollouts in highway-env.",
         "Ranked candidates on safety, lane keeping, and progress, cutting obstacle violations by 47% before vs. after training."
