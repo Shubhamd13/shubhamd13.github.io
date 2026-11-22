@@ -1,0 +1,87 @@
+/*******************************************************************************
+ * Math quotes: the small random quote on the home page and the /quotes/ page
+ ******************************************************************************/
+
+.math-quote {
+  margin: 2.5rem auto 0;
+  max-width: 34rem;
+  text-align: center;
+  color: var(--global-text-color-light);
+
+  p {
+    margin-bottom: 0.25rem;
+  }
+
+  .math-quote__text {
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  .math-quote__meta {
+    font-size: 0.8rem;
+
+    a {
+      color: var(--global-text-color-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+}
+
+.quotes-page {
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  .quote-card {
+    margin: 0 0 2.25rem;
+    scroll-margin-top: 5rem; // keep anchored quotes clear of the fixed navbar
+
+    blockquote {
+      margin: 1rem 0 0.4rem;
+      font-style: italic;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: var(--global-text-color-light);
+    }
+
+    p {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  .quote-card__anchor {
+    margin-left: 0.35rem;
+    opacity: 0;
+    color: var(--global-text-color-light);
+    transition: opacity 0.15s;
+  }
+
+  .quote-card:hover .quote-card__anchor,
+  .quote-card__anchor:focus {
+    opacity: 1;
+  }
+
+  .quote-card:target blockquote {
+    border-left-color: var(--global-highlight-color);
+  }
+
+  .quote-card__takeaway {
+    font-weight: 600;
+    margin-top: 0.6rem;
+  }
+
+  .quote-card__link {
+    font-size: 0.9rem;
+
+    i {
+      font-size: 0.7em;
+    }
+  }
+}

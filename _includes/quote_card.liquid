@@ -1,0 +1,18 @@
+{% assign q = include.q %}
+<figure class="quote-card" id="{{ q.id }}">
+  <blockquote>
+    <p>{{ q.quote }}</p>
+  </blockquote>
+  <figcaption>
+    <span class="quote-card__by">— {{ q.by }}</span>
+    <a class="quote-card__anchor" href="#{{ q.id }}" aria-label="Link to this quote">#</a>
+  </figcaption>
+  <p class="quote-card__takeaway">{{ q.takeaway }}</p>
+  <p class="quote-card__story">{{ q.story }}</p>
+  <p class="quote-card__link">
+    <a href="{{ q.link.url }}" target="_blank" rel="noopener noreferrer"
+      >Learn more: {{ q.link.label }}
+      <i class="fa-solid fa-arrow-up-right-from-square"></i
+    ></a>
+  </p>
+</figure>

@@ -1,0 +1,27 @@
+{% comment %}
+  One small math quote, picked at random on each page load from _data/quotes.yml.
+  Without JavaScript, the first quote is shown.
+{% endcomment %}
+{% assign quotes = site.data.quotes %}
+{% assign first = quotes | first %}
+{% assign quotes_url = '/quotes/' | relative_url %}
+<aside class="math-quote" aria-label="Math quote">
+  <p class="math-quote__text">
+    “<span data-quote-text>{{ first.quote }}</span>”
+  </p>
+  <p class="math-quote__meta">
+    <span data-quote-by>{{ first.by }}</span> ·
+    <a data-quote-link href="{{ quotes_url }}#{{ first.id }}">where it comes from</a>
+  </p>
+</aside>
+<script>
+  (function () {
+    var quotes = {{ quotes | jsonify }};
+    if (!quotes || quotes.length < 2) return;
+    var q = quotes[Math.floor(Math.random() * quotes.length)];
+    var root = document.currentScript.previousElementSibling;
+    root.querySelector("[data-quote-text]").innerHTML = q.quote;
+    root.querySelector("[data-quote-by]").innerHTML = q.by;
+    root.querySelector("[data-quote-link]").setAttribute("href", "{{ quotes_url }}#" + q.id);
+  })();
+</script>

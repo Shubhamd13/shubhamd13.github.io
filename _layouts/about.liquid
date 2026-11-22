@@ -65,6 +65,11 @@ layout: default
       </div>
     {% endif %}
 
+    <!-- Math quote -->
+    {% if page.math_quote %}
+      {% include math_quote.liquid %}
+    {% endif %}
+
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}

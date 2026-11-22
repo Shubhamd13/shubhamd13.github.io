@@ -15,6 +15,7 @@ profile:
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
+math_quote: true # one random quote from _data/quotes.yml, linking to /quotes/
 
 latest_posts:
   enabled: false

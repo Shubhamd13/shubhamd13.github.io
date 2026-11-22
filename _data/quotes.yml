@@ -1,0 +1,227 @@
+# Math quotes shown on /quotes/ and, one at random, at the bottom of the home page.
+#
+# Fields
+#   id        anchor on /quotes/ (keep it unique, lowercase, hyphenated)
+#   kind      "theorem" (a math fact read as life advice) or "person" (something a person said)
+#   quote     the line itself; light HTML such as <sup> is allowed
+#   by        who said it, or the area of math it comes from
+#   takeaway  one line: why it is motivating
+#   story     two or three sentences on where it comes from
+#   link      where to go and read more
+
+- id: almost-surely
+  kind: theorem
+  quote: "Probability zero does not mean impossible."
+  by: Measure-theoretic probability
+  takeaway: Odds that round to zero are still not a no.
+  story: >-
+    Pick a real number uniformly at random from [0, 1]. Every exact value has probability 0 of being picked, but some value is picked every time.
+    So probabilists separate "impossible" from "probability zero" and say an event with probability 1 happens <em>almost surely</em>, not
+    surely.
+  link:
+    url: https://en.wikipedia.org/wiki/Almost_surely
+    label: Almost surely
+
+- id: harmonic-series
+  kind: theorem
+  quote: "Ever-smaller steps can still take you infinitely far."
+  by: The harmonic series
+  takeaway: Progress that feels like it is shrinking still adds up.
+  story: >-
+    Every term of 1 + 1/2 + 1/3 + 1/4 + … is smaller than the one before, yet the sum grows without bound. Nicole Oresme proved this around 1350
+    by grouping the terms into blocks that each add up to more than 1/2.
+  link:
+    url: https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)
+    label: Harmonic series
+
+- id: intermediate-value
+  kind: theorem
+  quote: "You cannot get from here to there without passing through every point in between."
+  by: The intermediate value theorem
+  takeaway: The awkward middle stage is part of the path, not a sign you are lost.
+  story: >-
+    A continuous function that starts below a value and ends above it must hit that value somewhere along the way. It sounds obvious, which is why
+    nobody proved it rigorously until Bernard Bolzano did in 1817.
+  link:
+    url: https://en.wikipedia.org/wiki/Intermediate_value_theorem
+    label: Intermediate value theorem
+
+- id: monotone-convergence
+  kind: theorem
+  quote: "Keep moving in one direction, stay within bounds, and you will converge."
+  by: The monotone convergence theorem
+  takeaway: Steady, consistent progress always settles somewhere.
+  story: >-
+    Every sequence of real numbers that only goes up (or only goes down) and never passes some fixed bound has a limit. The theorem is one of the
+    standard ways to state that the real numbers have no gaps.
+  link:
+    url: https://en.wikipedia.org/wiki/Monotone_convergence_theorem
+    label: Monotone convergence theorem
+
+- id: simulated-annealing
+  kind: theorem
+  quote: "Sometimes you have to go uphill to find a deeper valley."
+  by: Simulated annealing
+  takeaway: A step that looks like a setback can be how you get out of a local minimum.
+  story: >-
+    Greedy search gets stuck in the first valley it finds. Simulated annealing, popularised by Kirkpatrick, Gelatt and Vecchi in 1983, sometimes
+    accepts worse moves on purpose, less often as the "temperature" cools, the way metal is cooled slowly to settle into a stronger structure.
+  link:
+    url: https://en.wikipedia.org/wiki/Simulated_annealing
+    label: Simulated annealing
+
+- id: law-of-large-numbers
+  kind: theorem
+  quote: "One trial is noise. Many trials reveal the truth."
+  by: The law of large numbers
+  takeaway: Judge yourself on the long-run average, not a single bad day.
+  story: >-
+    As you repeat an experiment, the average of the results converges to the expected value. Jacob Bernoulli spent over 20 years proving it; he
+    called it his "golden theorem", and it was published after his death in <em>Ars Conjectandi</em> (1713).
+  link:
+    url: https://en.wikipedia.org/wiki/Law_of_large_numbers
+    label: Law of large numbers
+
+- id: compounding
+  kind: theorem
+  quote: "1.01<sup>365</sup> ≈ 37.8, but 0.99<sup>365</sup> ≈ 0.03."
+  by: Compound growth
+  takeaway: Small daily differences compound into very different years.
+  story: >-
+    Growth that multiplies, rather than adds, runs away quickly in both directions. Studying compound interest in 1683, Jacob Bernoulli asked what
+    happens when interest is compounded more and more often, and the answer became the constant <em>e</em>.
+  link:
+    url: https://en.wikipedia.org/wiki/Compound_interest
+    label: Compound interest
+
+- id: fixed-point
+  kind: theorem
+  quote: "However much life stirs you, some point stays exactly where it started."
+  by: The Brouwer fixed-point theorem
+  takeaway: Some part of you stays put, however much changes around it.
+  story: >-
+    Any continuous map from a disk to itself leaves at least one point fixed. The usual picture: stir a cup of coffee gently, without splashing, and
+    when it settles some point of the liquid is back where it began. L. E. J. Brouwer proved the general case in the early 1910s.
+  link:
+    url: https://en.wikipedia.org/wiki/Brouwer_fixed-point_theorem
+    label: Brouwer fixed-point theorem
+
+- id: royal-road
+  kind: person
+  quote: "There is no royal road to geometry."
+  by: Euclid, to King Ptolemy I (as told by Proclus)
+  takeaway: There is no shortcut, even for a king.
+  story: >-
+    According to the philosopher Proclus, writing centuries later, Ptolemy I asked Euclid whether there was an easier way to learn geometry than
+    working through the <em>Elements</em>. This was the answer.
+  link:
+    url: https://en.wikipedia.org/wiki/Royal_road
+    label: Royal road
+
+- id: we-will-know
+  kind: person
+  quote: "We must know. We will know."
+  by: David Hilbert, Königsberg, 1930
+  takeaway: Aim high, and be ready for the answer to surprise you.
+  story: >-
+    Hilbert closed a famous 1930 address by rejecting the idea that some questions are unknowable; the line is engraved on his tombstone in
+    Göttingen. At a meeting in the same city, the day before, a young Kurt Gödel had quietly announced his first incompleteness theorem.
+  link:
+    url: https://en.wikipedia.org/wiki/Ignoramus_et_ignorabimus
+    label: Ignoramus et ignorabimus
+
+- id: dark-mansion
+  kind: person
+  quote: "You enter the first room of the mansion and it's completely dark… Finally, after six months or so, you find the light switch."
+  by: Andrew Wiles, on doing mathematics
+  takeaway: Months of stumbling in the dark are what research usually looks like.
+  story: >-
+    Wiles worked on Fermat's Last Theorem largely in secret for seven years and announced a proof in 1993. A gap was found; with Richard Taylor he
+    spent another year fixing it, and the corrected proof appeared in 1995.
+  link:
+    url: https://en.wikipedia.org/wiki/Wiles%27s_proof_of_Fermat%27s_Last_Theorem
+    label: Wiles's proof of Fermat's Last Theorem
+
+- id: patient-followers
+  kind: person
+  quote: "The beauty of mathematics only shows itself to more patient followers."
+  by: Maryam Mirzakhani
+  takeaway: Patience is part of the method, not a delay to it.
+  story: >-
+    From a 2008 interview with the Clay Mathematics Institute. Mirzakhani went on to become the first woman to win the Fields Medal, in 2014, for
+    her work on the geometry of Riemann surfaces.
+  link:
+    url: https://en.wikipedia.org/wiki/Maryam_Mirzakhani
+    label: Maryam Mirzakhani
+
+- id: simpler-problem
+  kind: person
+  quote: "If you cannot solve the proposed problem, try to solve first a simpler related problem."
+  by: George Pólya, <em>How to Solve It</em>
+  takeaway: When you are stuck, shrink the problem.
+  story: >-
+    Pólya's 1945 book turned problem-solving into a set of habits you can learn: understand the problem, make a plan, carry it out, look back.
+    Solving a smaller version first is one of its most-used heuristics.
+  link:
+    url: https://en.wikipedia.org/wiki/How_to_Solve_It
+    label: How to Solve It
+
+- id: get-used-to-them
+  kind: person
+  quote: "Young man, in mathematics you don't understand things. You just get used to them."
+  by: John von Neumann
+  takeaway: Confusion is normal; familiarity comes before understanding.
+  story: >-
+    Von Neumann's reply, as recalled by Felix T. Smith, to a physicist friend who worried he did not understand the method of characteristics.
+    Even one of the fastest mathematical minds of the century treated understanding as something that grows with use.
+  link:
+    url: https://en.wikiquote.org/wiki/John_von_Neumann
+    label: John von Neumann on Wikiquote
+
+- id: essence-is-freedom
+  kind: person
+  quote: "The essence of mathematics lies entirely in its freedom."
+  by: Georg Cantor, 1883
+  takeaway: You are allowed to invent new ideas, even ones others find strange.
+  story: >-
+    Cantor wrote this while defending his theory of infinite sets, which several leading mathematicians of the time, Leopold Kronecker above all,
+    rejected outright. Set theory is now the foundation most of mathematics is built on.
+  link:
+    url: https://en.wikipedia.org/wiki/Georg_Cantor
+    label: Georg Cantor
+
+- id: all-models-are-wrong
+  kind: person
+  quote: "All models are wrong, but some are useful."
+  by: George Box
+  takeaway: Do not wait for perfect. Build something useful and keep improving it.
+  story: >-
+    The statistician George Box wrote "all models are wrong" in a 1976 paper, and the longer form appears in his 1987 book with Norman Draper. It
+    holds for every simulator, every robot model and every controller.
+  link:
+    url: https://en.wikipedia.org/wiki/All_models_are_wrong
+    label: All models are wrong
+
+- id: think-it-possible
+  kind: person
+  quote: "I beseech you, in the bowels of Christ, think it possible that you may be mistaken."
+  by: Oliver Cromwell, 1650
+  takeaway: Never put a probability of exactly 0 on being wrong.
+  story: >-
+    The statistician Dennis Lindley named <em>Cromwell's rule</em> after this letter: if your prior probability for something is exactly 0 or 1, no
+    amount of evidence can change it under Bayes' rule. It is the other side of "probability zero does not mean impossible".
+  link:
+    url: https://en.wikipedia.org/wiki/Cromwell%27s_rule
+    label: Cromwell's rule
+
+- id: few-but-ripe
+  kind: person
+  quote: "Pauca sed matura. (Few, but ripe.)"
+  by: Carl Friedrich Gauss
+  takeaway: Quality over quantity. Finish things properly.
+  story: >-
+    Gauss's motto, which he put on his seal. He often sat on results for years until they were complete and polished, which is why other
+    mathematicians sometimes found their "new" discoveries already in his notebooks.
+  link:
+    url: https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss
+    label: Carl Friedrich Gauss
