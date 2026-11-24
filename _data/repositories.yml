@@ -87,6 +87,7 @@ side_repos:
     page: /projects/foodshala/
     where: Internshala assignment
     when: "2020"
+    github: https://github.com/Shubhamd13/foodshala
     tags:
       - PHP
       - CodeIgniter 4

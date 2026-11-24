@@ -17,7 +17,7 @@ toc:
   </div>
 </div>
 
-**Hiring assignment, June–July 2020** · built on my own · web developer role at Internshala
+**Hiring assignment, June–July 2020** · built on my own · web developer role at Internshala · [Source on GitHub](https://github.com/Shubhamd13/foodshala)
 
 ## Background
 
