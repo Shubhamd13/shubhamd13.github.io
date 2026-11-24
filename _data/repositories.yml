@@ -80,6 +80,22 @@ side_repos:
       - webpack
       - Bootstrap
 
+  - title: FoodShala
+    description: "A food-ordering site built solo in under a week for a web developer hiring assignment. Restaurants list dishes, customers browse one shared menu and order, each with their own role-checked pages."
+    img: assets/img/projects/foodshala/logo.png
+    img_fit: contain
+    page: /projects/foodshala/
+    where: Internshala assignment
+    when: "2020"
+    tags:
+      - PHP
+      - CodeIgniter 4
+      - MySQL
+      - Bootstrap
+      - jQuery
+      - AWS Elastic Beanstalk
+      - Amazon RDS
+
   - title: Prints On The Go
     description: "Our own idea: print at the photocopy shop straight from your phone, with no one at the counter, by driving the Windows print spooler directly."
     img: assets/img/potg-logo.png
