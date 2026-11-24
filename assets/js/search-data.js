@@ -87,6 +87,11 @@ ninja.data = [{
           description: "A personal health log I built to find my IBS triggers, by keeping meals, bowel movements, mood, and medication on one timeline.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/food-diary/";
+            },},{id: "projects-foodshala",
+          title: 'FoodShala',
+          description: "A food-ordering site where restaurants list their dishes and customers order them, built in under a week in PHP and MySQL.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/foodshala/";
             },},{id: "projects-prints-on-the-go",
           title: 'Prints On The Go',
           description: "Upload a document from your phone, and the photocopy shop&#39;s printer prints it with nobody at the counter.",
